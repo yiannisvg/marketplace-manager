@@ -32,7 +32,7 @@
 
 <div class="top-actions">
 <button class="top-btn update" onclick="location.href=location.pathname+'?v='+Date.now()"><span>↻</span> Check for updates</button>
-<button class="top-btn import" onclick="openImport()"><span>🔗</span> Import URL - Fixed</button>
+<button class="top-btn import" onclick="openImport()"><span>🔗</span> Import URL</button>
 <button class="top-btn" onclick="toast('Screenshot saved')"><span>📤</span> Screenshot</button>
 <button class="top-btn primary" onclick="openAdd()"><span>＋</span> Add listing</button>
 </div>
@@ -76,17 +76,19 @@
 <div class="modalBg" id="mEdit"><div class="modal"><h3>Edit Listing</h3><label class="lbl">Title</label><input id="et" class="inp"><label class="lbl">Price $</label><input id="etp" type="number" class="inp"><label class="lbl">Status</label><select id="es" class="inp"><option>Available</option><option>Pending</option><option>Shipped</option><option>Sold</option></select><label class="lbl">Buyer</label><input id="eb" class="inp"><label class="lbl">Final Price $</label><input id="ef" type="number" class="inp"><label class="lbl">Category</label><input id="ecat" class="inp"><label class="lbl">Listing URL</label><input id="eUrlLink" class="inp"><label class="lbl">Photo URL</label><input id="eUrl" class="inp"><div style="height:80px;background:#F0F2F5;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-top:8px" id="epb"></div><input type="file" id="efile" accept="image/*" hidden><button class="btn" style="background:#E4E6EB;width:100%;margin-top:8px" onclick="document.getElementById('efile').click()">📷 Change</button><div style="display:flex;gap:8px;margin-top:10px"><button class="btn" style="background:#E4E6EB;flex:1" onclick="closeM()">Cancel</button><button class="btn" style="background:#1877F2;color:white;flex:1" onclick="doSave()">Update</button></div><button class="btn" style="background:#FFE8E8;color:#C00;width:100%;margin-top:10px" onclick="doDel()">Delete</button></div></div>
 
 <!-- Import URL Modal - FIXED -->
-<div class="modalBg" id="mImport"><div class="modal"><h3>🔗 Import URL - Fixed</h3><p style="font-size:12px;color:#6B7280;margin:6px 0">Paste Facebook Marketplace or any product URL. App will try to auto-fetch title, price, and photo. If auto-fetch fails due to Facebook blocking, enter manually - URL will still be saved.</p>
+<div class="modalBg" id="mImport"><div class="modal"><h3>🔗 Import from URL</h3><p style="font-size:12px;color:#6B7280;margin:6px 0">Paste a listing URL. If it's one of your tracked listings, title, price and photo fill in instantly. Otherwise enter the details and attach a photo from your phone.</p>
 <label class="lbl">Listing URL *</label><input id="importUrl" class="inp" placeholder="https://www.facebook.com/marketplace/item/123456 or https://...">
-<div style="display:flex;gap:8px;margin-top:8px"><button class="btn" style="background:#E4E6EB;flex:1" onclick="tryFetchUrl()">🔍 Try Auto-Fetch</button><button class="btn" style="background:#FFC107;flex:1" onclick="pasteFromClipboard()">📋 Paste</button></div>
+<div style="display:flex;gap:8px;margin-top:8px"><button class="btn" style="background:#E4E6EB;flex:1" onclick="tryFetchUrl()">🔍 Auto-Fill</button><button class="btn" style="background:#FFC107;flex:1" onclick="pasteFromClipboard()">📋 Paste</button></div>
 <div id="importStatus" style="font-size:11px;color:#6B7280;margin-top:8px;display:none"></div>
 <label class="lbl">Title *</label><input id="importTitle" class="inp" placeholder="Auto-filled or enter manually">
 <label class="lbl">Price $ *</label><input id="importPrice" type="number" class="inp" placeholder="Auto-filled or enter">
 <label class="lbl">Category</label><input id="importCat" class="inp" placeholder="Home, Tools, etc">
 <label class="lbl">Photo URL</label><input id="importPhoto" class="inp" placeholder="Auto-filled or paste image URL">
+<div style="display:flex;gap:8px;margin-top:8px"><button class="btn" style="background:#E4E6EB;flex:1" onclick="document.getElementById('importPhotoFile').click()">📷 Photo from phone</button><button class="btn" style="background:#E4E6EB;flex:1" onclick="openImportUrl()">↗ Open listing</button></div>
+<input type="file" id="importPhotoFile" accept="image/*" style="display:none">
 <div class="import-preview" id="importPreview" style="display:none"><img id="importImg" src=""><div class="ip-info"><b id="importPrevTitle">Title</b><span id="importPrevPrice">$0</span><span id="importPrevUrl" style="display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:10px"></span></div></div>
 <div style="display:flex;gap:8px;margin-top:12px"><button class="btn" style="background:#E4E6EB;flex:1" onclick="closeM()">Cancel</button><button class="btn" style="background:#1877F2;color:white;flex:1" onclick="doImport()">✅ Import Listing</button></div>
-<div style="background:#E7F3FF;border-radius:10px;padding:10px;margin-top:10px;font-size:11px"><b>How it works:</b><br>1. Paste FB Marketplace URL<br>2. Tap Try Auto-Fetch (uses proxy to bypass CORS)<br>3. If Facebook blocks, manually enter title/price/photo - URL still saved for reference<br>4. Tap Import - listing added with price, photo, and URL</div>
+<div style="background:#E7F3FF;border-radius:10px;padding:10px;margin-top:10px;font-size:11px"><b>How it works:</b><br>1. Paste the listing URL and tap Auto-Fill<br>2. Your own tracked listings fill in completely (title, price, photo)<br>3. For anything else, type the title/price and tap 📷 to attach a photo from your phone<br>4. Tap Import — saved with price, photo, and URL</div>
 </div></div>
 
 <script>
@@ -206,10 +208,41 @@ document.getElementById("importTitle").addEventListener("input",updateImportPrev
 document.getElementById("importPrice").addEventListener("input",updateImportPreview);
 document.getElementById("importPhoto").addEventListener("input",updateImportPreview);
 document.getElementById("importUrl").addEventListener("input",updateImportPreview);
+function openImportUrl(){const u=document.getElementById("importUrl").value.trim(); if(!u){toast("Paste a URL first"); return;} window.open(u,"_blank");}
+document.getElementById("importPhotoFile").addEventListener("change",e=>{
+  const f=e.target.files[0]; if(!f) return;
+  const img=new Image();
+  img.onload=()=>{
+    const max=800; let w=img.width,h=img.height; const sc=Math.min(1,max/Math.max(w,h));
+    w=Math.round(w*sc); h=Math.round(h*sc);
+    const c=document.createElement("canvas"); c.width=w; c.height=h;
+    c.getContext("2d").drawImage(img,0,0,w,h);
+    document.getElementById("importPhoto").value=c.toDataURL("image/jpeg",0.82);
+    updateImportPreview(); toast("📷 Photo attached");
+    URL.revokeObjectURL(img.src); e.target.value="";
+  };
+  img.onerror=()=>toast("Couldn't read that photo");
+  img.src=URL.createObjectURL(f);
+});
 
 async function tryFetchUrl(){
   const url=document.getElementById("importUrl").value.trim(); if(!url){toast("Enter URL first"); return;}
-  const status=document.getElementById("importStatus"); status.style.display="block"; status.textContent="🔍 Trying to fetch via proxy... Facebook may block, will fallback to manual if needed.";
+  const status=document.getElementById("importStatus"); status.style.display="block";
+  // 1) Own inventory first: instant, always works, no network needed
+  const idm=url.match(/marketplace\/item\/(\d+)/);
+  if(idm){
+    const hit=listings.find(x=>x.url&&x.url.includes("/marketplace/item/"+idm[1]));
+    if(hit){
+      document.getElementById("importTitle").value=hit.title||"";
+      document.getElementById("importPrice").value=hit.price||"";
+      document.getElementById("importCat").value=hit.cat||"";
+      document.getElementById("importPhoto").value=hit.photo||"";
+      status.textContent="✅ Found in your tracked listings — title, price and photo filled in. Edit if needed, then Import.";
+      status.style.color="#2E7D32"; updateImportPreview(); toast("✅ Pulled from your listings");
+      return;
+    }
+  }
+  status.textContent="🔍 Trying to fetch via proxy... Facebook may block, will fallback to manual if needed.";
   // Try allorigins proxy
   try{
     const proxyUrl='https://api.allorigins.win/get?url='+encodeURIComponent(url);
