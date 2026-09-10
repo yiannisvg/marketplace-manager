@@ -24,14 +24,14 @@
 <div class="blue"><b>Marketplace Manager</b><div class="addr">Winston-Salem • Import URL Fixed • 79 items • $1,853 Active • $1,346 Earned</div>
 <div class="btns"><button class="btn btnW" onclick="manualBackup()">🔄 Backup</button><button class="btn btnG" onclick="document.getElementById('fbFile').click()">🔄 Update from FB</button><button class="btn btnW" style="background:white;color:#1877F2" onclick="openImport()">🔗 Import URL - Fixed</button><span id="last" style="font-size:10px;opacity:.8">Import Fixed • 79 items</span></div></div>
 
-<div class="live"><h2>Live inventory</h2><p id="liveSub">79 tracked listings • Available first → Pending → Shipped → Sold • Import URL Fixed • last saved Sep 10, 2026</p></div>
+<div class="live"><h2>Live inventory</h2><p id="liveSub">79 tracked listings • Available first → Pending → Shipped → Sold • Import URL Fixed • last saved Sep 10, 2026</p><p id="dataStamp" style="font-size:12px;color:#1877F2;font-weight:700;margin-top:4px">↻ Data updated Sep 10, 2026 · 2:00 PM EDT — tap "Check for updates" above for the latest</p></div>
 
 <div class="stats"><div class="s" id="st"><b>0</b><span>Total</span></div><div class="s" id="sa"><b>0</b><span>Available</span></div><div class="s" id="ss"><b>0</b><span>Sold</span></div></div>
 <div class="stats"><div class="s" id="sp"><b>0</b><span>Pending</span></div><div class="s shipped" id="ssh"><b>0</b><span>Shipped</span></div><div class="s earned" id="se"><b>$0</b><span>Total Earned</span></div></div>
 <div class="stats"><div class="s active-val" id="sac"><b>$0</b><span>Active Value</span></div><div class="s" style="visibility:hidden"></div><div class="s" style="visibility:hidden"></div></div>
 
 <div class="top-actions">
-<button class="top-btn update" onclick="document.getElementById('fbFile').click()"><span>🔄</span> Update</button>
+<button class="top-btn update" onclick="location.href=location.pathname+'?v='+Date.now()"><span>↻</span> Check for updates</button>
 <button class="top-btn import" onclick="openImport()"><span>🔗</span> Import URL - Fixed</button>
 <button class="top-btn" onclick="toast('Screenshot saved')"><span>📤</span> Screenshot</button>
 <button class="top-btn primary" onclick="openAdd()"><span>＋</span> Add listing</button>
@@ -52,7 +52,7 @@
 <button class="qbtn" data-type="pricing" onclick="selectType('pricing')"><span>📋</span> Pricing</button>
 <button class="qbtn" data-type="pickup" onclick="selectType('pickup')"><span>📋</span> Pick up</button>
 <button class="qbtn" data-type="decline" onclick="selectType('decline')"><span>📋</span> Decline</button>
-<button class="qbtn" data-type="review" onclick="selectType('review')"><span>📋</span> 5-star review ⭐ (8 options)</button>
+<button class="qbtn" data-type="review" onclick="selectType('review')"><span>📋</span> 5-star review ⭐ (4 options)</button>
 <button class="qbtn" data-type="reminder" onclick="selectType('reminder')"><span>📋</span> Kind reminder</button>
 </div>
 
@@ -138,7 +138,8 @@ function selectType(type){
   const previewBox=document.getElementById("previewBox"); previewBox.style.display="block";
   updatePreview();
   const optionsList=document.getElementById("optionsList");
-  optionsList.innerHTML='<h5>Pick from '+type+'</h5>'+[0,1,2].map(i=>'<div class="opt '+(i===selectedOptionIndex?"selected":"")+'" onclick="selectOption('+i+')"><b>Option '+(i+1)+':</b> '+generateText(type,i)+'</div>').join("");
+  const optCount=type==="review"?4:3; const optName=i=>type==="review"?(i<2?"Pickup "+(i+1):"Shipped "+(i-1)):"Option "+(i+1);
+  optionsList.innerHTML='<h5>Pick from '+type+'</h5>'+Array.from({length:optCount},(_,i)=>i).map(i=>'<div class="opt '+(i===selectedOptionIndex?"selected":"")+'" onclick="selectOption('+i+')"><b>'+optName(i)+':</b> '+generateText(type,i)+'</div>').join("");
 }
 function generateText(type, idx){
   const item=listings.find(x=>String(x.id)===String(selectedId))||listings[0];
@@ -164,9 +165,10 @@ function generateText(type, idx){
     if(idx===2) return `I appreciate your interest in ${title}. At the moment I can't go lower than $${price}. Let me know if that works for you.`;
   }
   if(type==="review"){
-    if(idx===0) return `Thanks for picking up the ${title} today from our Winston-Salem pickup location! If you had a smooth experience, would you mind leaving a 5-star review? It helps a local seller a lot!`;
-    if(idx===1) return `Great meeting you today! Thanks for picking up ${title} from our Winston-Salem pickup location. If everything went smoothly, a 5-star review would be amazing! I left you one too!`;
-    if(idx===2) return `Thank you for the smooth pickup of ${title}! If you have a moment, please leave a 5-star review on Marketplace - it really helps! Thanks again!`;
+    if(idx===0) return `⭐⭐⭐⭐⭐ Wonderful buyer! Great communication, showed up right on time, and the pickup went perfectly. Highly recommended!`;
+    if(idx===1) return `⭐⭐⭐⭐⭐ Excellent transaction! Friendly, punctual, and easy to work with. Thank you!`;
+    if(idx===2) return `⭐⭐⭐⭐⭐ Great buyer! Fast payment and excellent communication — everything went smoothly. Highly recommended!`;
+    if(idx===3) return `⭐⭐⭐⭐⭐ Smooth transaction from start to finish. Responsive and reliable buyer. Thank you!`;
   }
   if(type==="reminder"){
     if(idx===0) return `Hi! Just following up on the ${title} ($${price}) — it's still available for pickup at Winston-Salem, NC. Let me know if you're still interested!`;
