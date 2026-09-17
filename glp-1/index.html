@@ -50,10 +50,11 @@
     .goal-row small{display:block;opacity:.76}.goal-row b{font-size:1.15rem}
     .progress-track{height:8px;background:rgba(255,255,255,.22);border-radius:99px;margin-top:9px;overflow:hidden}.progress-track span{display:block;height:100%;width:59.8%;background:#fff;border-radius:99px}
     .summary{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    .stat{background:var(--surface);border:1px solid var(--line);padding:18px;border-radius:12px 24px 12px 24px;min-height:138px;display:flex;flex-direction:column;justify-content:space-between}
+    .stat{background:var(--surface);border:1px solid var(--line);padding:18px;border-radius:12px 24px 12px 24px;min-height:138px;display:flex;flex-direction:column;justify-content:space-between;color:var(--text);text-align:left}
     .stat.wide{grid-column:1/-1;background:var(--accent-soft)}
     .stat .kicker{color:var(--muted);font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
     .stat .value{font-size:clamp(1.6rem,4vw,2.6rem);font-weight:700;letter-spacing:-.05em}.stat .sub{font-size:.84rem;color:var(--muted)}
+    .summary-button{cursor:pointer;transition:border-color .16s ease,transform .16s ease}.summary-button:hover{border-color:var(--accent)}.summary-button:focus-visible{outline:3px solid var(--accent-soft);outline-offset:3px}.primary.summary-button{width:100%;border:0;font:inherit;text-align:left}.primary.summary-button:focus-visible{outline-color:var(--accent-2)}.tap-cue{display:inline-flex;align-items:center;gap:5px;font-size:.8rem;font-weight:700}.primary .tap-cue{color:#d9fff3}.stat .tap-cue{color:var(--accent)}
     .tabs{display:flex;gap:4px;background:var(--surface-2);border-radius:14px;padding:4px;margin:26px 0 18px;width:max-content;max-width:100%}
     .tab{border:0;background:transparent;color:var(--muted);padding:10px 15px;border-radius:10px;font-weight:700;cursor:pointer}.tab[aria-selected="true"]{background:var(--surface);color:var(--text);box-shadow:0 2px 10px rgba(16,35,30,.08)}
     .panel[hidden]{display:none}.panel{animation:appear .25s ease}
@@ -69,6 +70,7 @@
     .notes{display:grid;gap:12px}.note{background:var(--surface);border-bottom:1px solid var(--line);padding:18px 4px}.note:last-child{border:0}.note b{display:block;margin-bottom:4px}.note p{margin:0;color:var(--muted)}
     .stamp{margin:22px 2px 0;color:var(--muted);font-size:.78rem}
     dialog{border:0;padding:0;background:transparent;color:var(--text);width:min(460px,calc(100% - 28px));max-width:none}dialog::backdrop{background:rgba(3,12,9,.62)}.sheet{background:var(--surface);border-radius:24px;padding:24px;box-shadow:0 28px 80px rgba(0,0,0,.35)}.sheet-top{display:flex;justify-content:space-between;gap:16px;align-items:start}.sheet h2{font-family:"Source Serif 4",serif;font-size:1.8rem;margin:0}.close{border:0;background:var(--surface-2);color:var(--text);width:36px;height:36px;border-radius:50%;font-size:1.4rem;cursor:pointer}.steps{counter-reset:step;list-style:none;padding:0;margin:22px 0;display:grid;gap:14px}.steps li{counter-increment:step;display:grid;grid-template-columns:34px 1fr;gap:11px}.steps li:before{content:counter(step);display:grid;place-items:center;background:var(--accent);color:#fff;width:30px;height:30px;border-radius:50%;font-weight:700}.steps b{display:block}.steps span{color:var(--muted);font-size:.9rem}.done{width:100%;border:0;background:var(--accent);color:#fff;border-radius:12px;padding:13px;font-weight:700;cursor:pointer}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:22px 0 16px}.field{display:grid;gap:6px}.field.wide{grid-column:1/-1}.field label{font-size:.82rem;font-weight:700;color:var(--muted)}.field input,.field select{width:100%;border:1px solid var(--line);background:var(--bg);color:var(--text);border-radius:10px;padding:12px;font:inherit}.field input:focus,.field select:focus{outline:3px solid var(--accent-soft);border-color:var(--accent)}.form-note{margin:0 0 16px;color:var(--muted);font-size:.82rem}.save-row{display:flex;gap:10px}.save-row button{flex:1}.copy-result{display:none;margin-top:16px;background:var(--accent-soft);border-radius:12px;padding:14px}.copy-result.visible{display:block}.copy-text{display:block;width:100%;min-height:72px;resize:none;border:1px solid var(--line);background:var(--surface);color:var(--text);border-radius:10px;padding:11px 12px;font:600 .92rem/1.4 "DM Sans",sans-serif;margin:0 0 10px}.copy-text:focus{outline:3px solid var(--accent-soft);border-color:var(--accent)}.copy-result button{width:100%;border:0;background:var(--accent);color:#fff;border-radius:10px;padding:12px;font-weight:700;cursor:pointer}.copy-result small{display:block;color:var(--muted);margin-top:8px}.session-entry{animation:appear .25s ease}.session-entry .dot{border-color:var(--gold)}
+    .detail-sheet{max-height:min(86vh,760px);display:flex;flex-direction:column}.detail-summary{margin:8px 0 0;color:var(--muted);font-size:.9rem}.detail-list{margin-top:18px;overflow-y:auto;border-top:1px solid var(--line);overscroll-behavior:contain}.detail-row{display:grid;grid-template-columns:74px minmax(0,1fr) auto;gap:12px;align-items:center;padding:12px 2px;border-bottom:1px solid var(--line)}.detail-row:last-child{border-bottom:0}.detail-row .detail-date{font-weight:700}.detail-row .detail-main{min-width:0}.detail-row .detail-main b{display:block}.detail-row .detail-main small{display:block;color:var(--muted);margin-top:1px}.detail-row .detail-value{font-weight:700;color:var(--accent);white-space:nowrap}.monthly-list .detail-row{grid-template-columns:88px minmax(0,1fr) auto}.detail-foot{padding-top:14px;color:var(--muted);font-size:.78rem}
     @media(max-width:720px){.hero,.section-grid,.dose-hero{grid-template-columns:1fr}.summary{grid-template-columns:1fr 1fr}.primary{min-height:255px}.topline{align-items:flex-start;flex-direction:column}.top-actions{width:100%;justify-content:flex-start}.topline h1{font-size:2.25rem}.action-btn{padding:10px 13px}.home-btn span{display:none}.home-btn{padding:11px}.log-tools{align-items:stretch;flex-direction:column}.log-buttons{display:grid;grid-template-columns:1fr 1fr}.log-buttons .update-btn{grid-column:1/-1;justify-content:center}.log-buttons .action-btn{justify-content:center}.dose-row{grid-template-columns:65px 1fr 40px}.tl-row{grid-template-columns:76px 14px 1fr}.card{box-shadow:none}.tabs{width:100%}.tab{flex:1;padding:10px 8px}.chart text{font-size:11px}}
     @media(max-width:430px){.form-grid{grid-template-columns:1fr}.field.wide{grid-column:auto}}
     @media(max-width:390px){.summary{grid-template-columns:1fr}.stat.wide{grid-column:auto}.big-number{font-size:4rem}.brands{grid-template-columns:1fr}.goal-row{gap:12px}.goal-row b{font-size:1rem}}
@@ -102,12 +104,12 @@
   </section>
 
   <section class="hero" aria-label="Progress summary">
-    <article class="primary">
+    <button class="primary summary-button" id="weightSummaryBtn" type="button" aria-haspopup="dialog" aria-label="Latest weight 241.3 pounds. View monthly weight history.">
       <div><div class="label">Latest logged weight</div><div class="big-number"><span id="currentWeight">241.3</span><span class="unit">lb</span></div><div class="change"><strong id="lossTotal">↓ 61.5 lb</strong> since April 2</div></div>
-      <div class="goal-row"><div><small>Goal</small><b>200 lb</b></div><div style="flex:1"><small id="goalCopy">59.8% of 102.8 lb goal loss</small><div class="progress-track" id="goalTrack" aria-label="59.8 percent toward weight goal"><span id="goalProgress" style="width:59.8%"></span></div></div></div>
-    </article>
+      <div><div class="goal-row"><div><small>Goal</small><b>200 lb</b></div><div style="flex:1"><small id="goalCopy">59.8% of 102.8 lb goal loss</small><div class="progress-track" id="goalTrack" aria-label="59.8 percent toward weight goal"><span id="goalProgress" style="width:59.8%"></span></div></div></div><span class="tap-cue">View monthly weights →</span></div>
+    </button>
     <div class="summary">
-      <article class="stat"><div class="kicker">Total shots</div><div class="value" id="heroShotTotal">25</div><div class="sub">Tirzepatide</div></article>
+      <button class="stat summary-button" id="shotsSummaryBtn" type="button" aria-haspopup="dialog" aria-label="25 total shots. View exact dates and doses."><div class="kicker">Total shots</div><div class="value" id="heroShotTotal">25</div><div class="tap-cue">View dates &amp; doses →</div></button>
       <article class="stat"><div class="kicker">Current dose</div><div class="value"><span id="currentDose">7.5</span><span class="unit">mg</span></div><div class="sub" id="currentDoseDate">Latest: Sep 17</div></article>
       <article class="stat wide"><div class="kicker">Average pace</div><div class="value"><span id="heroWeekPace">2.56</span><span class="unit">lb/week</span></div><div class="sub" id="paceDays">Calculated across 168 days</div></article>
     </div>
@@ -175,6 +177,54 @@
   </section>
   <p class="stamp">Personal progress summary • Data through Sep 17, 2026 • Not medical advice</p>
 </main>
+
+<dialog id="shotsDetailDialog" aria-labelledby="shotsDetailTitle">
+  <div class="sheet detail-sheet">
+    <div class="sheet-top"><div><div class="label" style="color:var(--accent)">25 shots logged</div><h2 id="shotsDetailTitle">Exact dates &amp; doses</h2><p class="detail-summary">24 shots have exact dates. One additional 2.5 mg Zepbound shot is confirmed, but its date wasn’t recorded.</p></div><button class="close" type="button" data-close="shotsDetailDialog" aria-label="Close">×</button></div>
+    <div class="detail-list" id="shotsDetailList">
+      <div class="detail-row"><div class="detail-date">Sep 17</div><div class="detail-main"><b>Mounjaro</b><small>Shot 25</small></div><div class="detail-value">7.5 mg</div></div>
+      <div class="detail-row"><div class="detail-date">Sep 10</div><div class="detail-main"><b>Mounjaro</b><small>Shot 24</small></div><div class="detail-value">7.5 mg</div></div>
+      <div class="detail-row"><div class="detail-date">Sep 3</div><div class="detail-main"><b>Mounjaro</b><small>Shot 23</small></div><div class="detail-value">5 mg</div></div>
+      <div class="detail-row"><div class="detail-date">Aug 27</div><div class="detail-main"><b>Mounjaro</b><small>Shot 22</small></div><div class="detail-value">5 mg</div></div>
+      <div class="detail-row"><div class="detail-date">Aug 20</div><div class="detail-main"><b>Mounjaro</b><small>Shot 21</small></div><div class="detail-value">5 mg</div></div>
+      <div class="detail-row"><div class="detail-date">Aug 13</div><div class="detail-main"><b>Mounjaro</b><small>Shot 20</small></div><div class="detail-value">5 mg</div></div>
+      <div class="detail-row"><div class="detail-date">Aug 6</div><div class="detail-main"><b>Mounjaro</b><small>Shot 19</small></div><div class="detail-value">5 mg</div></div>
+      <div class="detail-row"><div class="detail-date">Jul 30</div><div class="detail-main"><b>Mounjaro</b><small>Shot 18</small></div><div class="detail-value">5 mg</div></div>
+      <div class="detail-row"><div class="detail-date">Jul 23</div><div class="detail-main"><b>Mounjaro</b><small>Shot 17</small></div><div class="detail-value">2.5 mg</div></div>
+      <div class="detail-row"><div class="detail-date">Jul 16</div><div class="detail-main"><b>Mounjaro</b><small>Shot 16</small></div><div class="detail-value">2.5 mg</div></div>
+      <div class="detail-row"><div class="detail-date">Jul 9</div><div class="detail-main"><b>Mounjaro</b><small>Shot 15</small></div><div class="detail-value">2.5 mg</div></div>
+      <div class="detail-row"><div class="detail-date">Jul 2</div><div class="detail-main"><b>Mounjaro</b><small>Shot 14</small></div><div class="detail-value">2.5 mg</div></div>
+      <div class="detail-row"><div class="detail-date">Jun 25</div><div class="detail-main"><b>Mounjaro</b><small>Shot 13</small></div><div class="detail-value">2.5 mg</div></div>
+      <div class="detail-row"><div class="detail-date">Jun 18</div><div class="detail-main"><b>Mounjaro</b><small>Shot 12</small></div><div class="detail-value">2.5 mg</div></div>
+      <div class="detail-row"><div class="detail-date">Jun 11</div><div class="detail-main"><b>Mounjaro</b><small>Shot 11</small></div><div class="detail-value">2.5 mg</div></div>
+      <div class="detail-row"><div class="detail-date">Jun 4</div><div class="detail-main"><b>Mounjaro</b><small>Shot 10</small></div><div class="detail-value">2.5 mg</div></div>
+      <div class="detail-row"><div class="detail-date">Not recorded</div><div class="detail-main"><b>Zepbound</b><small>Shot 9 · confirmed entry</small></div><div class="detail-value">2.5 mg</div></div>
+      <div class="detail-row"><div class="detail-date">May 28</div><div class="detail-main"><b>Zepbound</b><small>Shot 8</small></div><div class="detail-value">2.5 mg</div></div>
+      <div class="detail-row"><div class="detail-date">May 21</div><div class="detail-main"><b>Zepbound</b><small>Shot 7</small></div><div class="detail-value">2.5 mg</div></div>
+      <div class="detail-row"><div class="detail-date">May 14</div><div class="detail-main"><b>Zepbound</b><small>Shot 6</small></div><div class="detail-value">2.5 mg</div></div>
+      <div class="detail-row"><div class="detail-date">May 6</div><div class="detail-main"><b>Zepbound</b><small>Shot 5</small></div><div class="detail-value">2.5 mg</div></div>
+      <div class="detail-row"><div class="detail-date">Apr 30</div><div class="detail-main"><b>Zepbound</b><small>Shot 4</small></div><div class="detail-value">2.5 mg</div></div>
+      <div class="detail-row"><div class="detail-date">Apr 16</div><div class="detail-main"><b>Zepbound</b><small>Shot 3</small></div><div class="detail-value">2.5 mg</div></div>
+      <div class="detail-row"><div class="detail-date">Apr 9</div><div class="detail-main"><b>Zepbound</b><small>Shot 2</small></div><div class="detail-value">2.5 mg</div></div>
+      <div class="detail-row"><div class="detail-date">Apr 2</div><div class="detail-main"><b>Zepbound</b><small>Shot 1</small></div><div class="detail-value">2.5 mg</div></div>
+    </div>
+  </div>
+</dialog>
+
+<dialog id="weightDetailDialog" aria-labelledby="weightDetailTitle">
+  <div class="sheet detail-sheet">
+    <div class="sheet-top"><div><div class="label" style="color:var(--accent)">Weight history</div><h2 id="weightDetailTitle">Monthly progress</h2><p class="detail-summary">Last verified weight recorded in each month.</p></div><button class="close" type="button" data-close="weightDetailDialog" aria-label="Close">×</button></div>
+    <div class="detail-list monthly-list" id="monthlyWeightList">
+      <div class="detail-row" data-month="2026-09"><div class="detail-date">September</div><div class="detail-main"><b>241.3 lb</b><small>Sep 17</small></div><div class="detail-value">↓ 5.3 lb</div></div>
+      <div class="detail-row" data-month="2026-08"><div class="detail-date">August</div><div class="detail-main"><b>246.6 lb</b><small>Aug 25</small></div><div class="detail-value">↓ 9.0 lb</div></div>
+      <div class="detail-row" data-month="2026-07"><div class="detail-date">July</div><div class="detail-main"><b>255.6 lb</b><small>Jul 31</small></div><div class="detail-value">↓ 8.3 lb</div></div>
+      <div class="detail-row" data-month="2026-06"><div class="detail-date">June</div><div class="detail-main"><b>263.9 lb</b><small>Jun 25</small></div><div class="detail-value">↓ 8.8 lb</div></div>
+      <div class="detail-row" data-month="2026-05"><div class="detail-date">May</div><div class="detail-main"><b>272.7 lb</b><small>May 31</small></div><div class="detail-value">↓ 15.9 lb</div></div>
+      <div class="detail-row" data-month="2026-04"><div class="detail-date">April</div><div class="detail-main"><b>288.6 lb</b><small>Apr 30</small></div><div class="detail-value">↓ 14.2 lb</div></div>
+    </div>
+    <div class="detail-foot">April change is from the 302.8 lb starting weight on Apr 2. Later changes compare with the previous month shown.</div>
+  </div>
+</dialog>
 
 <dialog id="weightDialog" aria-labelledby="weightTitle">
   <div class="sheet">
@@ -258,7 +308,9 @@
   const homeDialog=document.getElementById('homeDialog');
   const weightDialog=document.getElementById('weightDialog');
   const shotDialog=document.getElementById('shotDialog');
-  const allDialogs=[updateDialog,homeDialog,weightDialog,shotDialog];
+  const shotsDetailDialog=document.getElementById('shotsDetailDialog');
+  const weightDetailDialog=document.getElementById('weightDetailDialog');
+  const allDialogs=[updateDialog,homeDialog,weightDialog,shotDialog,shotsDetailDialog,weightDetailDialog];
   const today=()=>{
     const d=new Date(), offset=d.getTimezoneOffset();
     return new Date(d.getTime()-offset*60000).toISOString().slice(0,10);
@@ -268,6 +320,8 @@
   const longDate=value=>parseDate(value).toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'});
 
   document.getElementById('homeBtn').addEventListener('click',()=>homeDialog.showModal());
+  document.getElementById('shotsSummaryBtn').addEventListener('click',()=>shotsDetailDialog.showModal());
+  document.getElementById('weightSummaryBtn').addEventListener('click',()=>weightDetailDialog.showModal());
   document.getElementById('weightBtn').addEventListener('click',()=>{
     document.getElementById('weightDate').value=today();
     document.getElementById('weightResult').classList.remove('visible');
@@ -324,7 +378,21 @@
     document.getElementById('weekPace').textContent=perWeek.toFixed(2);
     document.getElementById('monthPace').textContent=perMonth.toFixed(1);
     document.getElementById('progressDate').textContent=`Progress through ${longDate(date)} · session entry`;
+    document.getElementById('weightSummaryBtn').setAttribute('aria-label',`Latest weight ${weight.toFixed(1)} pounds. View monthly weight history.`);
     updateWeightChart(weight,date);
+    const monthKey=date.slice(0,7);
+    const monthlyList=document.getElementById('monthlyWeightList');
+    let monthRow=monthlyList.querySelector(`[data-month="${monthKey}"]`);
+    const previousRow=monthRow?monthRow.nextElementSibling:monthlyList.firstElementChild;
+    const previousWeight=previousRow?Number(previousRow.querySelector('.detail-main b').textContent.replace(/[^0-9.]/g,'')):startWeight;
+    const monthChange=previousWeight-weight;
+    if(!monthRow){
+      monthRow=document.createElement('div');
+      monthRow.className='detail-row session-entry';
+      monthRow.dataset.month=monthKey;
+      monthlyList.prepend(monthRow);
+    }
+    monthRow.innerHTML=`<div class="detail-date">${parseDate(date).toLocaleDateString('en-US',{month:'long'})}</div><div class="detail-main"><b>${weight.toFixed(1)} lb</b><small>${shortDate(date)} · Session only</small></div><div class="detail-value">${monthChange>=0?'↓':'↑'} ${Math.abs(monthChange).toFixed(1)} lb</div>`;
     const message=`Log weight: ${weight.toFixed(1)} lbs on ${shortDate(date)}`;
     document.getElementById('weightMessage').value=message;
     document.getElementById('weightResult').classList.add('visible');
@@ -376,6 +444,13 @@
     row.className='tl-row session-entry';
     row.innerHTML=`<div class="date">${shortDate(date)}</div><div class="dot"></div><div class="event"><b>${dose} mg ${medication}</b><small>${site} · Session only</small></div>`;
     document.querySelector('#doseTimeline h2').insertAdjacentElement('afterend',row);
+    const detailRow=document.createElement('div');
+    detailRow.className='detail-row session-entry';
+    detailRow.innerHTML=`<div class="detail-date">${shortDate(date)}</div><div class="detail-main"><b>${medication}</b><small>Shot ${shotTotal} · Session only</small></div><div class="detail-value">${dose} mg</div>`;
+    document.getElementById('shotsDetailList').prepend(detailRow);
+    document.querySelector('#shotsDetailDialog .label').textContent=`${shotTotal} shots logged`;
+    document.querySelector('#shotsDetailDialog .detail-summary').textContent=`${shotTotal-1} shots have exact dates. One additional 2.5 mg Zepbound shot is confirmed, but its date wasn’t recorded.`;
+    document.getElementById('shotsSummaryBtn').setAttribute('aria-label',`${shotTotal} total shots. View exact dates and doses.`);
     const message=`Log shot: ${shortDate(date)}, ${medication} ${dose} mg, ${site}`;
     document.getElementById('shotMessage').value=message;
     document.getElementById('shotResult').classList.add('visible');
