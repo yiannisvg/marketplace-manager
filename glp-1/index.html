@@ -107,8 +107,8 @@
       <div class="goal-row"><div><small>Goal</small><b>200 lb</b></div><div style="flex:1"><small id="goalCopy">59.8% of 102.8 lb goal loss</small><div class="progress-track" id="goalTrack" aria-label="59.8 percent toward weight goal"><span id="goalProgress" style="width:59.8%"></span></div></div></div>
     </article>
     <div class="summary">
-      <article class="stat"><div class="kicker">Total shots</div><div class="value" id="heroShotTotal">24</div><div class="sub">Tirzepatide</div></article>
-      <article class="stat"><div class="kicker">Current dose</div><div class="value"><span id="currentDose">7.5</span><span class="unit">mg</span></div><div class="sub" id="currentDoseDate">Latest: Sep 10</div></article>
+      <article class="stat"><div class="kicker">Total shots</div><div class="value" id="heroShotTotal">25</div><div class="sub">Tirzepatide</div></article>
+      <article class="stat"><div class="kicker">Current dose</div><div class="value"><span id="currentDose">7.5</span><span class="unit">mg</span></div><div class="sub" id="currentDoseDate">Latest: Sep 17</div></article>
       <article class="stat wide"><div class="kicker">Average pace</div><div class="value"><span id="heroWeekPace">2.56</span><span class="unit">lb/week</span></div><div class="sub" id="paceDays">Calculated across 168 days</div></article>
     </div>
   </section>
@@ -147,11 +147,11 @@
 
   <section class="panel" id="doses" role="tabpanel" aria-labelledby="dosesTab" hidden>
     <div class="dose-hero">
-      <article class="dose-total"><span class="label">Treatment total</span><strong id="doseShotTotal">24</strong><span>shots logged</span><div class="brands"><div class="brand"><b id="zepboundTotal">9</b><span>Zepbound</span></div><div class="brand"><b id="mounjaroTotal">15</b><span>Mounjaro</span></div></div></article>
+      <article class="dose-total"><span class="label">Treatment total</span><strong id="doseShotTotal">25</strong><span>shots logged</span><div class="brands"><div class="brand"><b id="zepboundTotal">9</b><span>Zepbound</span></div><div class="brand"><b id="mounjaroTotal">16</b><span>Mounjaro</span></div></div></article>
       <article class="card dose-bars"><h2>Dose breakdown</h2>
         <div class="dose-row" data-dose="2.5"><span>2.5 mg</span><div class="bar"><i style="width:100%"></i></div><b>17</b></div>
         <div class="dose-row" data-dose="5"><span>5 mg</span><div class="bar"><i style="width:35.3%"></i></div><b>6</b></div>
-        <div class="dose-row" data-dose="7.5"><span>7.5 mg</span><div class="bar"><i style="width:5.9%"></i></div><b>1</b></div>
+        <div class="dose-row" data-dose="7.5"><span>7.5 mg</span><div class="bar"><i style="width:11.8%"></i></div><b>2</b></div>
       </article>
     </div>
     <article class="timeline" id="doseTimeline">
@@ -159,7 +159,8 @@
       <div class="tl-row"><div class="date">Apr 2</div><div class="dot"></div><div class="event"><b>Started 2.5 mg</b><small>Zepbound</small></div></div>
       <div class="tl-row"><div class="date">Early Jun</div><div class="dot"></div><div class="event"><b>Continued 2.5 mg</b><small>Switched from Zepbound to Mounjaro after 9 shots</small></div></div>
       <div class="tl-row"><div class="date">Jul 30</div><div class="dot"></div><div class="event"><b>Moved to 5 mg</b><small>Six weekly doses</small></div></div>
-      <div class="tl-row"><div class="date">Sep 10</div><div class="dot"></div><div class="event"><b>Moved to 7.5 mg</b><small>Latest logged shot</small></div></div>
+      <div class="tl-row"><div class="date">Sep 10</div><div class="dot"></div><div class="event"><b>Moved to 7.5 mg</b><small>Mounjaro</small></div></div>
+      <div class="tl-row"><div class="date">Sep 17</div><div class="dot"></div><div class="event"><b>7.5 mg Mounjaro</b><small>Abdomen · upper left · Latest logged shot</small></div></div>
     </article>
   </section>
 
@@ -168,7 +169,7 @@
       <div><h2>Report notes</h2><p class="desc">How the combined record was reconciled.</p></div>
       <div class="note"><b>Sources combined</b><p>Glapp, MeAgain and Lilly Health screenshots supplied for this report.</p></div>
       <div class="note"><b>Weight cleanup</b><p>The 200 lb entry from April 20 and 161.6 lb entry from April 27 were treated as erroneous and removed from calculations.</p></div>
-      <div class="note"><b>Shot count corrected</b><p>The final count is 24: 9 Zepbound and 15 Mounjaro. Dose total: seventeen 2.5 mg, six 5 mg and one 7.5 mg shots.</p></div>
+      <div class="note"><b>Shot count updated</b><p>The current count is 25: 9 Zepbound and 16 Mounjaro. Dose total: seventeen 2.5 mg, six 5 mg and two 7.5 mg shots.</p></div>
       <div class="note"><b>Symptoms</b><p>No side effects were logged in the supplied records. Injection pain was recorded as 0/10.</p></div>
     </article>
   </section>
@@ -331,9 +332,9 @@
     document.getElementById('copyWeight').textContent='Copy update text';
   });
 
-  let shotTotal=24;
-  const brandCounts={Zepbound:9,Mounjaro:15};
-  const doseCounts={'2.5':17,'5':6,'7.5':1};
+  let shotTotal=25;
+  const brandCounts={Zepbound:9,Mounjaro:16};
+  const doseCounts={'2.5':17,'5':6,'7.5':2};
   const renderDoses=()=>{
     document.getElementById('heroShotTotal').textContent=shotTotal;
     document.getElementById('doseShotTotal').textContent=shotTotal;
