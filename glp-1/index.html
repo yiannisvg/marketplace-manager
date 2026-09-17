@@ -180,7 +180,7 @@
 
 <dialog id="shotsDetailDialog" aria-labelledby="shotsDetailTitle">
   <div class="sheet detail-sheet">
-    <div class="sheet-top"><div><div class="label" style="color:var(--accent)">25 shots logged</div><h2 id="shotsDetailTitle">Exact dates &amp; doses</h2><p class="detail-summary">24 shots have exact dates. One additional 2.5 mg Zepbound shot is confirmed, but its date wasn’t recorded.</p><p class="detail-help"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>Tap a date to edit · swipe left to delete</p></div><button class="close" type="button" data-close="shotsDetailDialog" aria-label="Close">×</button></div>
+    <div class="sheet-top"><div><div class="label" style="color:var(--accent)">25 shots logged</div><h2 id="shotsDetailTitle">Exact dates &amp; doses</h2><p class="detail-summary">All 25 shots have exact dates.</p><p class="detail-help"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>Tap a date to edit · swipe left to delete</p></div><button class="close" type="button" data-close="shotsDetailDialog" aria-label="Close">×</button></div>
     <div class="detail-list" id="shotsDetailList">
       <div class="detail-row"><div class="detail-date">Sep 17</div><div class="detail-main"><b>Mounjaro</b><small>Shot 25</small></div><div class="detail-value">7.5 mg</div></div>
       <div class="detail-row"><div class="detail-date">Sep 10</div><div class="detail-main"><b>Mounjaro</b><small>Shot 24</small></div><div class="detail-value">7.5 mg</div></div>
@@ -198,12 +198,12 @@
       <div class="detail-row"><div class="detail-date">Jun 18</div><div class="detail-main"><b>Mounjaro</b><small>Shot 12</small></div><div class="detail-value">2.5 mg</div></div>
       <div class="detail-row"><div class="detail-date">Jun 11</div><div class="detail-main"><b>Mounjaro</b><small>Shot 11</small></div><div class="detail-value">2.5 mg</div></div>
       <div class="detail-row"><div class="detail-date">Jun 4</div><div class="detail-main"><b>Mounjaro</b><small>Shot 10</small></div><div class="detail-value">2.5 mg</div></div>
-      <div class="detail-row"><div class="detail-date">Not recorded</div><div class="detail-main"><b>Zepbound</b><small>Shot 9 · confirmed entry</small></div><div class="detail-value">2.5 mg</div></div>
-      <div class="detail-row"><div class="detail-date">May 28</div><div class="detail-main"><b>Zepbound</b><small>Shot 8</small></div><div class="detail-value">2.5 mg</div></div>
-      <div class="detail-row"><div class="detail-date">May 21</div><div class="detail-main"><b>Zepbound</b><small>Shot 7</small></div><div class="detail-value">2.5 mg</div></div>
-      <div class="detail-row"><div class="detail-date">May 14</div><div class="detail-main"><b>Zepbound</b><small>Shot 6</small></div><div class="detail-value">2.5 mg</div></div>
-      <div class="detail-row"><div class="detail-date">May 6</div><div class="detail-main"><b>Zepbound</b><small>Shot 5</small></div><div class="detail-value">2.5 mg</div></div>
-      <div class="detail-row"><div class="detail-date">Apr 30</div><div class="detail-main"><b>Zepbound</b><small>Shot 4</small></div><div class="detail-value">2.5 mg</div></div>
+      <div class="detail-row"><div class="detail-date">May 28</div><div class="detail-main"><b>Zepbound</b><small>Shot 9</small></div><div class="detail-value">2.5 mg</div></div>
+      <div class="detail-row"><div class="detail-date">May 21</div><div class="detail-main"><b>Zepbound</b><small>Shot 8</small></div><div class="detail-value">2.5 mg</div></div>
+      <div class="detail-row"><div class="detail-date">May 14</div><div class="detail-main"><b>Zepbound</b><small>Shot 7</small></div><div class="detail-value">2.5 mg</div></div>
+      <div class="detail-row"><div class="detail-date">May 6</div><div class="detail-main"><b>Zepbound</b><small>Shot 6</small></div><div class="detail-value">2.5 mg</div></div>
+      <div class="detail-row"><div class="detail-date">Apr 30</div><div class="detail-main"><b>Zepbound</b><small>Shot 5</small></div><div class="detail-value">2.5 mg</div></div>
+      <div class="detail-row"><div class="detail-date">Apr 23</div><div class="detail-main"><b>Zepbound</b><small>Shot 4</small></div><div class="detail-value">2.5 mg</div></div>
       <div class="detail-row"><div class="detail-date">Apr 16</div><div class="detail-main"><b>Zepbound</b><small>Shot 3</small></div><div class="detail-value">2.5 mg</div></div>
       <div class="detail-row"><div class="detail-date">Apr 9</div><div class="detail-main"><b>Zepbound</b><small>Shot 2</small></div><div class="detail-value">2.5 mg</div></div>
       <div class="detail-row"><div class="detail-date">Apr 2</div><div class="detail-main"><b>Zepbound</b><small>Shot 1</small></div><div class="detail-value">2.5 mg</div></div>
@@ -481,7 +481,7 @@
     document.getElementById('shotsDetailList').prepend(detailRow);
     enhanceRecord(detailRow);
     document.querySelector('#shotsDetailDialog .label').textContent=`${shotTotal} shots logged`;
-    document.querySelector('#shotsDetailDialog .detail-summary').textContent=`${shotTotal-1} shots have exact dates. One additional 2.5 mg Zepbound shot is confirmed, but its date wasn’t recorded.`;
+    document.querySelector('#shotsDetailDialog .detail-summary').textContent=`All ${shotTotal} shots have exact dates.`;
     document.getElementById('shotsSummaryBtn').setAttribute('aria-label',`${shotTotal} total shots. View exact dates and doses.`);
     const message=`Log shot: ${shortDate(date)}, ${medication} ${dose} mg, ${site}`;
     document.getElementById('shotMessage').value=message;
