@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Athos Lots</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Athos Lots">
+<meta name="theme-color" content="#0A1E3C">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230A1E3C'/%3E%3Ctext x='50' y='68' font-size='52' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EA%3C/text%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230A1E3C'/%3E%3Ctext x='50' y='68' font-size='52' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EA%3C/text%3E%3C/svg%3E">
+<style>
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body { margin:0; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; background:#f4f5f7; color:#111; padding-top:env(safe-area-inset-top); padding-bottom:env(safe-area-inset-bottom); }
+  header { background:#0A1E3C; color:#fff; padding:14px 16px; position:sticky; top:0; z-index:10; }
+  header h1 { margin:0; font-size:20px; }
+  header p { margin:4px 0 0; font-size:12px; color:#bcd; }
+  .tabs { display:flex; background:#0A1E3C; padding:0 12px 10px; gap:8px; position:sticky; top:64px; z-index:9; }
+  .tab { flex:1; border:0; border-radius:10px; padding:10px; font-size:15px; font-weight:700; background:#1b3358; color:#cfe0ff; }
+  .tab.active { background:#fff; color:#0A1E3C; }
+  #list { padding:12px 12px 24px; }
+  .card { background:#fff; border-radius:14px; padding:14px; margin-bottom:12px; box-shadow:0 1px 3px rgba(0,0,0,.08); }
+  .card.pending { opacity:.65; }
+  .toprow { display:flex; justify-content:space-between; align-items:center; gap:8px; }
+  .addr { font-weight:700; font-size:16px; }
+  .price { font-weight:800; font-size:17px; color:#0A1E3C; background:#e8f0ff; padding:4px 10px; border-radius:20px; white-space:nowrap; }
+  .meta { font-size:13px; color:#555; margin:6px 0; }
+  .notes { font-size:14px; margin:6px 0 10px; line-height:1.4; }
+  .flags { display:flex; flex-wrap:wrap; gap:6px; margin:6px 0; }
+  .flag { font-size:11px; font-weight:800; padding:3px 8px; border-radius:12px; text-transform:uppercase; letter-spacing:.3px; }
+  .f-new { background:#16a34a; color:#fff; }
+  .f-cut { background:#2563eb; color:#fff; }
+  .f-flood { background:#dc2626; color:#fff; }
+  .f-pending { background:#d97706; color:#fff; }
+  .f-watch { background:#7c3aed; color:#fff; }
+  .f-verify { background:#e2e8f0; color:#334155; }
+  .btn { display:block; text-align:center; background:#0A1E3C; color:#fff; text-decoration:none; font-weight:700; padding:12px; border-radius:12px; font-size:16px; }
+  footer { text-align:center; font-size:12px; color:#777; padding:8px 16px 24px; line-height:1.5; }
+  .count { font-size:13px; color:#666; padding:2px 12px 0; }
+</style>
+</head>
+<body>
+<header>
+  <h1>🏗️ Athos Lots</h1>
+  <p>Buildable lots — Forsyth + surrounding counties · Data updated <span id="updated">—</span></p>
+</header>
+<div class="tabs">
+  <button class="tab active" id="tabA" onclick="show('A')">💧 Water + Sewer</button>
+  <button class="tab" id="tabB" onclick="show('B')">🚽 Septic</button>
+</div>
+<div class="count" id="count"></div>
+<div id="list"></div>
+<footer>
+  Tap a listing to open it in Safari. Verify tap fees &amp; utility connections with the city/county before offering.<br>
+  Criteria: flat, minimal clearing · ≤$50k (≤$70k for a steal) · no downtown W-S, projects, or lower-income areas.
+</footer>
+<script>
+const LOTS = [
+  // ===== LIST A — public water + public sewer =====
+  {list:"A", addr:"725 Sagebrush TRL, Winston-Salem 27101", price:14900, acre:"0.66 ac", county:"Forsyth",
+   util:"Public water + sewer available", notes:"Level lot in established Winchester neighborhood. RS20 zoning (single-family OK). Listed Oct 2025.",
+   flags:[], link:"https://www.landwatch.com/forsyth-county-north-carolina-undeveloped-land-for-sale/pid/425256858"},
+  {list:"A", addr:"0 Milling Rd, Mocksville 27028", price:45000, acre:"0.29 ac", county:"Davie",
+   util:"Public water + sewer", notes:"Flat, level lot. No HOA. Listed Jul 2025. Best flat-fit water/sewer lot found.",
+   flags:[], link:"https://www.landsearch.com/properties/milling-rd-mocksville-nc-27028/4326529"},
+  {list:"A", addr:"Lot 47 Delaware Ct, Mocksville 27028", price:40000, acre:"0.93 ac", county:"Davie",
+   util:"City water + sewer", notes:"Curbed streets, underground utilities. Mocksville GR (single-family). No HOA. Deed restrictions — review before committing.",
+   flags:[["PENDING","f-pending"]], link:"https://www.coldwellbankerhomes.com/nc/mocksville/lot-47-delaware-ct/pid_40256231/"},
+  {list:"A", addr:"2761 Stable Hill Trail, Kernersville 27284", price:40000, acre:"1.36 ac", county:"Forsyth",
+   util:"Community water + sewer", notes:"Mikkola Downs subdivision. RS40. HOA $110/yr. Listed Oct 2025, $5K price drop. Access via easement.",
+   flags:[["FLOOD PLAIN — VERIFY","f-flood"]], link:"https://www.homefront.com/homes/nc/kernersville/property/2761-stable-hill-trail-ce628f03-9cc7-39ac-840a-9ee8f54bdf8b"},
+  {list:"A", addr:"351 Honeysuckle St, Mocksville 27028", price:24000, acre:"0.46 ac", county:"Davie",
+   util:"City water + sewer", notes:"Sloped and wooded — clearing/grading needed. Private gravel road. NR zoning. No HOA. Manufactured homes prohibited. Cut from $25K.",
+   flags:[["PRICE CUT","f-cut"]], link:"https://www.homes.com/property/351-honeysuckle-st-mocksville-nc/04vpc0zy4z6f7/"},
+  {list:"A", addr:"0 Hinshaw Ave SW, Winston-Salem 27104", price:17400, acre:"7,405 sqft", county:"Forsyth",
+   util:"Public water + sewer — no connections yet", notes:"Vacant in-town lot. Tap install cost unknown. Verify lot lines — no survey on file. Seller has more lots.",
+   flags:[["VERIFY","f-verify"]], link:"https://www.homes.com/winston-salem-nc/land-for-sale/"},
+  {list:"A", addr:"1102 E 23rd St NE, Winston-Salem 27105", price:32000, acre:"0.26 ac", county:"Forsyth",
+   util:"City water + sewer", notes:"Established in-town neighborhood. $3K price drop from $35K.",
+   flags:[["PRICE CUT","f-cut"]], link:"https://www.realtor.com/realestateandhomes-detail/1102-NE-23rd-St_Winston-Salem_NC_27105_M54353-70000"},
+  // ===== LIST B — septic-allowed =====
+  {list:"B", addr:"1740 Shiloh Church Rd, Rural Hall 27045", price:59900, acre:"2.39 ac", county:"Forsyth",
+   util:"Septic evaluated (3+ BR), public water nearby", notes:"Soil report on agent site. AG zoning. No HOA, no mobile homes. Paved public road. New clearing at build site. Triad MLS 1190314.",
+   flags:[["PRIORITY WATCH","f-watch"]], link:"https://www.homes.com/property/1740-shiloh-church-rd-rural-hall-nc/8mt59z4vzn5v3/"},
+  {list:"B", addr:"1526 Harvest Dr, Winston-Salem 27101", price:34900, acre:"0.46 ac", county:"Forsyth",
+   util:"Public water at street, septic likely", notes:"Cleared lot. Sewer unconfirmed — neighbors on septic. Triad MLS 1225038. Just relisted.",
+   flags:[["NEW","f-new"],["VERIFY","f-verify"]], link:"https://www.homes.com/winston-salem-nc/land-for-sale/"},
+  {list:"B", addr:"111 Waterway Dr, Lexington 27292", price:63000, acre:"0.56 ac", county:"Davidson",
+   util:"Public water (Davidson Water), septic permit", notes:"Cleared. 3-BR septic permit issued 2023. House blueprints included. Seller financing. Older record showed a $29K sale — verify current status.",
+   flags:[["PRICE CUT","f-cut"],["VERIFY","f-verify"]], link:"https://www.coldwellbanker.com/nc/lexington/111-waterway-dr/lid-P00800000GgK0V4s4Cn5eoLYHFjPOeNirCWS7wZz"},
+  {list:"B", addr:"162 Houston's Hideaway, Lexington 27292", price:49000, acre:"1.44 ac", county:"Davidson",
+   util:"Public water, septic needed", notes:"Cleared, buildable. Yachtsman's Point lake community (pool/tennis/boat ramp). HOA $1,080/yr. Min 2,000 sqft build.",
+   flags:[], link:"https://www.homefront.com/homes/nc/lexington/property/162-houston's-hideaway-85d7d6dd-01d5-3263-928b-e6b314db616c"},
+  {list:"B", addr:"156 Sailor's Rest Dr, Lexington 27292", price:57000, acre:"1.79 ac", county:"Davidson",
+   util:"Septic (4-BR perc passed)", notes:"Wooded private community. 30-ft easement access. Site-built only per covenants.",
+   flags:[], link:"https://www.homes.com/lexington-nc/land-for-sale/"},
+  {list:"B", addr:"3939 US Hwy 64, Mocksville 27028", price:20000, acre:"0.78 ac", county:"Davie",
+   util:"Public water, septic needed", notes:"Wooded — clearing required. Big price drop (cut 8/20).",
+   flags:[["PRICE CUT","f-cut"]], link:"https://www.homes.com/mocksville-nc/land-for-sale/"},
+  {list:"B", addr:"480 Avenue I, Lexington 27292", price:35000, acre:"0.22 ac", county:"Davidson",
+   util:"Septic (2-BR permit on file)", notes:"Old utilities on property. Southmont near High Rock Lake. Tiny lot — abandoned single-wide must be removed.",
+   flags:[], link:"https://www.homes.com/lexington-nc/land-for-sale/"},
+  {list:"B", addr:"200 Bramblewood Ln, Mocksville 27028", price:49900, acre:"4.06 ac", county:"Davie",
+   util:"Well + septic needed", notes:"Nearly level, 0.25 ac already cleared, easy to clear. No public water/sewer. Private gravel road/easement. Lower priority.",
+   flags:[["VERIFY","f-verify"]], link:"https://www.homes.com/property/200-bramblewood-ln-mocksville-nc/ttrznrenem223/"}
+];
+document.getElementById("updated").textContent = "Sept 17, 2026";
+function fmt(n){ return "$" + n.toLocaleString("en-US"); }
+function show(which){
+  document.getElementById("tabA").classList.toggle("active", which==="A");
+  document.getElementById("tabB").classList.toggle("active", which==="B");
+  const lots = LOTS.filter(l => l.list === which);
+  const active = lots.filter(l => !l.flags.some(f => f[0]==="PENDING"));
+  document.getElementById("count").textContent = active.length + " lots";
+  document.getElementById("list").innerHTML = lots.map(l => {
+    const fl = l.flags.map(f => `<span class="flag ${f[1]}">${f[0]}</span>`).join("");
+    const pend = l.flags.some(f => f[0]==="PENDING") ? " pending" : "";
+    return `<div class="card${pend}">
+      <div class="toprow"><div class="addr">${l.addr}</div><div class="price">${fmt(l.price)}</div></div>
+      <div class="meta">${l.acre} · ${l.county} Co. · ${l.util}</div>
+      <div class="flags">${fl}</div>
+      <div class="notes">${l.notes}</div>
+      <a class="btn" href="${l.link}" target="_blank" rel="noopener">View listing</a>
+    </div>`;
+  }).join("");
+}
+show("A");
+</script>
+</body>
+</html>
