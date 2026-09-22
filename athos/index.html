@@ -59,17 +59,23 @@
 <script>
 const LOTS = [
   // ===== LIST A — public water + public sewer =====
+  {list:"A", addr:"LOT 54 Rhode Island Ct, Mocksville 27028", price:46800, acre:"1.06 ac", county:"Davie",
+   util:"Public water + PUBLIC sewer, Duke electric", notes:"Wooded city lot, inside Mocksville city limits. No HOA. Colonial Estates (paved/curbed streets). Best utility fit in the 9/22 sweep.",
+   flags:[["NEW","f-new"],["VERIFY","f-verify"]], link:"https://www.Homes.com/property/lot-54-rhode-island-ct-mocksville-nc/t8ggx96e1bjsb/"},
+  {list:"A", addr:"LOT 13 N Carolina Cir, Mocksville 27028", price:45000, acre:"0.79 ac", county:"Davie",
+   util:"City water + city sewer, underground utilities", notes:"Large curbed streets, no HOA. Same Colonial Estates subdivision as Rhode Island Ct.",
+   flags:[["NEW","f-new"],["VERIFY","f-verify"]], link:"https://www.homes.com/mocksville-nc/land-for-sale/"},
   {list:"A", addr:"0 Old Greensboro Rd, Winston-Salem 27105", price:34900, acre:"1.37 ac", county:"Forsyth",
-   util:"Public water + PUBLIC sewer, Duke electric, gas", notes:"Inside W-S city limits; includes adjoining Edna St parcel. Spradley Realty, MLS# 1215171. Listed 4/6/26 — new to tracking.",
-   flags:[["NEW","f-new"],["VERIFY","f-verify"]], link:"https://www.homes.com/winston-salem-nc/land-for-sale/"},
+   util:"Public water + PUBLIC sewer, Duke electric, gas", notes:"Inside W-S city limits; includes adjoining Edna St parcel. Spradley Realty, MLS# 1215171. Listed 4/6/26.",
+   flags:[], link:"https://www.homes.com/winston-salem-nc/land-for-sale/"},
   {list:"A", addr:"3304 Oakcrest Ave + 3003 Oakcrest Ave, High Point 27260", price:59000, acre:"3.56 ac", county:"Guilford",
-   util:"Public water + sewer nearby — verify", notes:"Two combined vacant lots; mature trees, mostly level. CB Preferred Properties, MLS# 100604749. Replaces the two 9/20 split entries (street corrected: Oakcrest, not Central Ave). ⚠ 27260 is central High Point — check area quality in person.",
+   util:"Public water + sewer nearby — verify", notes:"Two combined vacant lots; mature trees, mostly level. CB Preferred Properties, MLS# 100604749. ⚠ 27260 is central High Point — check area quality in person. (3003 Oakcrest also lists separately at $49K, MLS# 100601658.)",
    flags:[["VERIFY","f-verify"]], link:"https://www.innovatelistings.com/nc-triad-real-estate/"},
   {list:"A", addr:"2127 Westminister Ln, Winston-Salem 27106", price:30000, acre:"0.65 ac", county:"Forsyth",
-   util:"Public water + public sewer", notes:"4-lot minor subdivision, new survey 2023. MLS# 1215732. ⚠ Price unconfirmed ($30K carried; Movoto hides the price).",
-   flags:[["VERIFY PRICE","f-verify"]], link:"https://www.movoto.com/winston-salem-nc/2127-westminister-ln-winston-salem-nc-27106/pid_ww9bf5ub7uxm/"},
+   util:"Public water + public sewer", notes:"4-lot minor subdivision, new survey 2023. MLS# 1215732. Price now CONFIRMED $30,000 (homes.com/Zillow).",
+   flags:[], link:"https://www.movoto.com/winston-salem-nc/2127-westminister-ln-winston-salem-nc-27106/pid_ww9bf5ub7uxm/"},
   {list:"A", addr:"0 Milling Rd, Mocksville 27028", price:45000, acre:"0.29 ac", county:"Davie",
-   util:"Public water + sewer", notes:"Flat, level lot. No HOA. Relisted 4/2/26. Best flat-fit water/sewer lot found.",
+   util:"Public water + sewer", notes:"Flat, level lot. No HOA. Relisted 4/2/26.",
    flags:[], link:"https://www.landsearch.com/properties/milling-rd-mocksville-nc-27028/4326529"},
   {list:"A", addr:"725 Sagebrush TRL, Winston-Salem 27101", price:14900, acre:"0.66 ac", county:"Forsyth",
    util:"Public water + sewer available", notes:"Level lot in established Winchester neighborhood. RS20 zoning (single-family OK).",
@@ -84,56 +90,68 @@ const LOTS = [
    util:"Public water + public sewer", notes:"Colonial Estates subdivision. Sister Lot 47 just sold — area is moving. Active.",
    flags:[], link:"https://www.ColdwellBankerHomes.com/nc/mocksville/lot-51-delaware-ct/pid_40256233/"},
   {list:"A", addr:"1102 E 23rd St NE, Winston-Salem 27105", price:32000, acre:"0.26 ac", county:"Forsyth",
-   util:"City water + sewer", notes:"Established in-town neighborhood. ⚠ Status conflict: realtor.com = Off Market; Triangle MLS feed = FOR SALE $35,000 (MLS# 10143791, updated hours before scan). Direct MLS check before any move.",
+   util:"City water + sewer", notes:"Established in-town neighborhood. ⚠ Status conflict: realtor.com = Off Market; fresh Triangle MLS feed = FOR SALE $35,000 (MLS# 10143791). Freshest feed favors Active. Direct MLS check before any move.",
    flags:[["VERIFY","f-verify"]], link:"https://www.realtor.com/realestateandhomes-detail/1102-NE-23rd-St_Winston-Salem_NC_27105_M54353-70000"},
   {list:"A", addr:"351 Honeysuckle St, Mocksville 27028", price:23000, acre:"0.46 ac", county:"Davie",
-   util:"City water + sewer", notes:"Sloped and wooded — clearing/grading needed. Private gravel road. NR zoning. No HOA. $1K drop, but now PENDING.",
-   flags:[["PENDING","f-pending"],["PRICE CUT","f-cut"]], link:"https://www.homes.com/property/351-honeysuckle-st-mocksville-nc/04vpc0zy4z6f7/"},
+   util:"City water + sewer", notes:"Sloped and wooded — clearing/grading needed. ⚠ AMBIGUOUS 9/22: homes.com shows Active $24,000 with $6K-drop badge (pending may have fallen through); Weichert cache still $23K. Re-check next scan.",
+   flags:[["VERIFY","f-verify"]], link:"https://www.homes.com/property/351-honeysuckle-st-mocksville-nc/04vpc0zy4z6f7/"},
   // ===== LIST B — septic-allowed =====
+  {list:"B", addr:"3929 US Hwy 64 W, Mocksville 27028", price:25000, acre:"0.87 ac", county:"Davie",
+   util:"Public water, septic permit attached", notes:"Wooded — clearing required; not in flood zone. Dropped to $25K May 2026. Different parcel from tracked 3939 US 64.",
+   flags:[["NEW","f-new"],["VERIFY","f-verify"]], link:"https://www.landsearch.com/properties/3929-us-highway-64-w-mocksville-nc-27028/4705006"},
   {list:"B", addr:"1538 Harvest Dr, Winston-Salem 27101", price:44900, acre:"0.46 ac", county:"Forsyth",
    util:"Water tap installed, 3-BR septic permit", notes:"Flat, cleared & graded. Tap worth ~$8K installed. RS9 single-family. Strong fit — but same 27101 neighborhood as 1526: drive it first.",
    flags:[["VERIFY","f-verify"]], link:"https://www.homes.com/winston-salem-nc/land-for-sale/"},
   {list:"B", addr:"177 Dillingham Rd, Winston-Salem 27105", price:29900, acre:"1.37 ac", county:"Forsyth",
-   util:"Public water, septic needed", notes:"Wooded — clearing required. RS9. MLS# 1203310. Verified Active $29,900 on 9/21 — but it lingers (repeated under-contract cycles). ⚠ Dual-listed: Northgroup MLS# 1191461 at $35K (house-and-lot package) — clarify what's for sale.",
+   util:"Public water, septic needed", notes:"Wooded — clearing required. RS9. MLS# 1203310. ⚠ Dual-listed: Northgroup MLS# 1191461 at $35K (house-and-lot package) — clarify what's for sale.",
    flags:[["VERIFY","f-verify"]], link:"https://www.homefront.com/homes/nc/winston-salem/property/177-dillingham-road-6980f083-b54f-3253-a883-033bbccd9fe3"},
-  {list:"B", addr:"1740 Shiloh Church Rd, Rural Hall 27045", price:59900, acre:"2.39 ac", county:"Forsyth",
-   util:"Septic evaluated (3+ BR), public water nearby", notes:"Soil report on agent site. AG zoning. No HOA, no mobile homes. Paved public road. New clearing at build site. Triad MLS 1190314. NO price cut — verified 9/21.",
-   flags:[["PRIORITY WATCH","f-watch"]], link:"https://www.homes.com/property/1740-shiloh-church-rd-rural-hall-nc/8mt59z4vzn5v3/"},
+  {list:"B", addr:"2991 Spangenberg Rd, Winston-Salem 27127", price:27000, acre:"0.60 ac", county:"Davidson/Forsyth",
+   util:"Public water, septic subject to re-approval", notes:"Friedburg Place area; paved public road; deed restrictions; MLS 832146. ⚠ Long-listed (~9 yrs) — verify still available.",
+   flags:[["NEW","f-new"],["VERIFY","f-verify"]], link:"https://www.coldwellbankerhomes.com/carolinas/2991-spangenberg-road/pid_17674051/"},
   {list:"B", addr:"1526 Harvest Dr, Winston-Salem 27101", price:34900, acre:"0.46 ac", county:"Forsyth",
    util:"Public water at street, septic likely", notes:"Cleared lot. Sewer unconfirmed — neighbors on septic. MLS 1225038. Just relisted.",
    flags:[["VERIFY","f-verify"]], link:"https://www.homes.com/winston-salem-nc/land-for-sale/"},
-  {list:"B", addr:"111 Waterway Dr, Lexington 27292", price:63000, acre:"0.56 ac", county:"Davidson",
-   util:"Public water (Davidson Water), 3-BR septic permit (2023)", notes:"Cleared, near High Rock Lake. Blueprints included. Seller financing. ⚠ Back ACTIVE at $63,000 on live homes.com (was $50K pending) — but other aggregators still show $50K pending. Verify before acting.",
-   flags:[["VERIFY","f-verify"],["$13K CUT GONE","f-cut"]], link:"https://www.homes.com/lexington-nc/land-for-sale/"},
+  {list:"B", addr:"251 Bowers Rd, Thomasville 27360", price:25000, acre:"0.46 ac", county:"Davidson",
+   util:"Water available, septic needed", notes:"Site-built or modular only. $1K price drop shown. MLS 1142927 (Total Real Estate).",
+   flags:[["NEW","f-new"],["VERIFY","f-verify"]], link:"https://www.homes.com/davidson-county-nc/land-for-sale/"},
+  {list:"B", addr:"0 NC Hwy 66 S, King 27021", price:29900, acre:"2.05 ac", county:"Stokes",
+   util:"Power available", notes:"Gently rolling, excellent drainage; no flood zones/wetlands; 165 ft paved road frontage; R-A. ⚠ Crawls ~360 days old — verify still live.",
+   flags:[["NEW","f-new"],["VERIFY","f-verify"]], link:"https://www.homes.com/king-nc/land-for-sale/"},
+  {list:"B", addr:"0 Karen Ln, Pinnacle (Stokes)", price:36900, acre:"1.62 ac", county:"Stokes",
+   util:"Rural — well + septic assumed", notes:"Recently cleared with driveway graded; unrestricted (mobiles allowed). $3K cut from $39,900.",
+   flags:[["NEW","f-new"],["VERIFY","f-verify"]], link:"https://www.homes.com/pinnacle-nc/land-for-sale/"},
+  {list:"B", addr:"111 Waterway Dr, Lexington 27292", price:50000, acre:"0.56 ac", county:"Davidson",
+   util:"Public water (Davidson Water), 3-BR septic permit (2023)", notes:"Cleared, near High Rock Lake. Blueprints included. Seller financing. ⚠ SALE PENDING at $50,000 (was tracked Active $63K on a 359-day stale crawl). Watch if pending falls through.",
+   flags:[["PENDING","f-pending"]], link:"https://www.homes.com/lexington-nc/land-for-sale/"},
   {list:"B", addr:"162 Houston's Hideaway, Lexington 27292", price:49000, acre:"1.44 ac", county:"Davidson",
    util:"Public water, septic needed", notes:"Cleared, buildable. Yachtsman's Point lake community (pool/tennis/boat ramp). HOA $1,080/yr. Min 2,000 sqft build.",
    flags:[], link:"https://www.homefront.com/homes/nc/lexington/property/162-houston's-hideaway-85d7d6dd-01d5-3263-928b-e6b314db616c"},
-  {list:"B", addr:"156 Sailor's Rest Dr, Lexington 27292", price:59000, acre:"1.79 ac", county:"Davidson",
-   util:"Septic (4-BR perc passed)", notes:"Wooded private community. 30-ft easement access. Site-built only per covenants. ⚠ Price RAISED $57K → $59K on 9/21.",
-   flags:[["PRICE UP","f-cut"]], link:"https://www.homes.com/lexington-nc/land-for-sale/"},
+  {list:"B", addr:"156 Sailor's Rest Dr, Lexington 27292", price:57000, acre:"1.79 ac", county:"Davidson",
+   util:"Septic (4-BR perc passed)", notes:"Wooded private community. 30-ft easement access. Site-built only per covenants.",
+   flags:[["PRICE CUT $2K","f-cut"]], link:"https://www.homes.com/lexington-nc/land-for-sale/"},
   {list:"B", addr:"3939 US Hwy 64, Mocksville 27028", price:20000, acre:"0.78 ac", county:"Davie",
-   util:"Public water, septic needed", notes:"Wooded — clearing required. Not in flood zone. Verified Active $20K on 9/21 (the $23K homes.com figure is the adjacent 3929 parcel).",
+   util:"Public water, septic needed", notes:"Wooded — clearing required. Not in flood zone. Verified Active $20K (the $23K homes.com figure is the adjacent 3929 parcel).",
    flags:[], link:"https://www.homes.com/mocksville-nc/land-for-sale/"},
   {list:"B", addr:"480 Avenue I, Lexington 27292", price:35000, acre:"0.22 ac", county:"Davidson",
    util:"Septic (2-BR permit on file)", notes:"Old utilities on property. Southmont near High Rock Lake. Tiny lot — abandoned single-wide must be removed.",
    flags:[], link:"https://www.homes.com/lexington-nc/land-for-sale/"},
   {list:"B", addr:"3837 Eastview Dr, Winston-Salem 27107", price:20000, acre:"0.68 ac", county:"Davidson",
-   util:"Septic (perc test completed)", notes:"Wooded lot, MLS# 1216237. 27107 W-S address but in Davidson County. ⚠ Price is TENTATIVE ($20K from stale crawls, low confidence). County records confirm Flood Zone: Yes + tax delinquent. Verify directly.",
-   flags:[["TENTATIVE PRICE","f-verify"],["FLOOD — VERIFY","f-flood"]], link:"https://www.movoto.com/winston-salem-nc/3837-eastview-dr-winston-salem-nc-27107/pid_yky91g3wudcb/"},
+   util:"Septic (perc test completed)", notes:"Wooded lot, MLS# 1216237. 27107 W-S address but in Davidson County. ⚠ County records: Flood Zone YES + tax delinquent. Price CONFIRMED $20,000 (was tentative).",
+   flags:[["FLOOD — VERIFY","f-flood"]], link:"https://www.movoto.com/winston-salem-nc/3837-eastview-dr-winston-salem-nc-27107/pid_yky91g3wudcb/"},
   {list:"B", addr:"200 Bramblewood Ln, Mocksville 27028", price:49900, acre:"4.06 ac", county:"Davie",
-   util:"Well + septic needed", notes:"Nearly level, 0.25 ac already cleared, easy to clear. No public water/sewer. Private gravel road/easement. Lower priority.",
-   flags:[["VERIFY","f-verify"]], link:"https://www.homes.com/property/200-bramblewood-ln-mocksville-nc/ttrznrenem223/"}
+   util:"Well + septic needed", notes:"Nearly level, 0.25 ac already cleared, easy to clear. No public water/sewer. Private gravel road/easement.",
+   flags:[["UNDER CONTRACT","f-pending"],["VERIFY","f-verify"]], link:"https://www.homes.com/property/200-bramblewood-ln-mocksville-nc/ttrznrenem223/"}
 ];
-document.getElementById("updated").textContent = "Sept 21, 2026";
+document.getElementById("updated").textContent = "Sept 22, 2026";
 function fmt(n){ return n > 0 ? "$" + n.toLocaleString("en-US") : "—"; }
 function show(which){
   document.getElementById("tabA").classList.toggle("active", which==="A");
   document.getElementById("tabB").classList.toggle("active", which==="B");
   const lots = LOTS.filter(l => l.list === which);
-  const active = lots.filter(l => !l.flags.some(f => f[0]==="PENDING" || f[0]==="SALE PENDING"));
+  const active = lots.filter(l => !l.flags.some(f => f[0]==="PENDING" || f[0]==="UNDER CONTRACT"));
   document.getElementById("count").textContent = active.length + " lots" + (active.length !== lots.length ? " (+" + (lots.length - active.length) + " pending)" : "");
   document.getElementById("list").innerHTML = lots.map(l => {
-    const pend = l.flags.some(f => f[0]==="PENDING" || f[0]==="SALE PENDING") ? " pending" : "";
+    const pend = l.flags.some(f => f[0]==="PENDING" || f[0]==="UNDER CONTRACT") ? " pending" : "";
     return `<div class="card${pend}">
       <div class="toprow"><div class="addr">${l.addr}</div><div class="price">${fmt(l.price)}</div></div>
       <div class="meta">${l.acre} · ${l.county} Co · ${l.util}</div>
