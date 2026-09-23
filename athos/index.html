@@ -90,11 +90,11 @@ const LOTS = [
    util:"Public water + public sewer", notes:"Colonial Estates subdivision. Sister Lot 47 just sold — area is moving. Active.",
    flags:[], link:"https://www.ColdwellBankerHomes.com/nc/mocksville/lot-51-delaware-ct/pid_40256233/"},
   {list:"A", addr:"1102 E 23rd St NE, Winston-Salem 27105", price:32000, acre:"0.26 ac", county:"Forsyth",
-   util:"City water + sewer", notes:"Established in-town neighborhood. ⚠ Status conflict: realtor.com = Off Market; fresh Triangle MLS feed = FOR SALE $35,000 (MLS# 10143791). Freshest feed favors Active. Direct MLS check before any move.",
+   util:"City water + sewer", notes:"Established in-town neighborhood. ⚠ Still source-split 9/23: realtor.com = Off Market; fresh Triangle MLS feed = FOR SALE $35,000 (MLS# 10143791, updated hours before scan). Freshest feed favors Active. Direct MLS check before any move.",
    flags:[["VERIFY","f-verify"]], link:"https://www.realtor.com/realestateandhomes-detail/1102-NE-23rd-St_Winston-Salem_NC_27105_M54353-70000"},
   {list:"A", addr:"351 Honeysuckle St, Mocksville 27028", price:23000, acre:"0.46 ac", county:"Davie",
-   util:"City water + sewer", notes:"Sloped and wooded — clearing/grading needed. ⚠ AMBIGUOUS 9/22: homes.com shows Active $24,000 with $6K-drop badge (pending may have fallen through); Weichert cache still $23K. Re-check next scan.",
-   flags:[["VERIFY","f-verify"]], link:"https://www.homes.com/property/351-honeysuckle-st-mocksville-nc/04vpc0zy4z6f7/"},
+   util:"City water + sewer", notes:"Sloped and wooded — clearing/grading needed. RESOLVED 9/23: Coldwell Banker confirms still Pending at $23,000 (Triad MLS 1134905). The homes.com Active $24K tile was a stale copy. Watch for future back-on-market.",
+   flags:[["PENDING","f-pending"],["VERIFY","f-verify"]], link:"https://www.homes.com/property/351-honeysuckle-st-mocksville-nc/04vpc0zy4z6f7/"},
   // ===== LIST B — septic-allowed =====
   {list:"B", addr:"3929 US Hwy 64 W, Mocksville 27028", price:25000, acre:"0.87 ac", county:"Davie",
    util:"Public water, septic permit attached", notes:"Wooded — clearing required; not in flood zone. Dropped to $25K May 2026. Different parcel from tracked 3939 US 64.",
@@ -127,10 +127,10 @@ const LOTS = [
    util:"Public water, septic needed", notes:"Cleared, buildable. Yachtsman's Point lake community (pool/tennis/boat ramp). HOA $1,080/yr. Min 2,000 sqft build.",
    flags:[], link:"https://www.homefront.com/homes/nc/lexington/property/162-houston's-hideaway-85d7d6dd-01d5-3263-928b-e6b314db616c"},
   {list:"B", addr:"156 Sailor's Rest Dr, Lexington 27292", price:57000, acre:"1.79 ac", county:"Davidson",
-   util:"Septic (4-BR perc passed)", notes:"Wooded private community. 30-ft easement access. Site-built only per covenants.",
+   util:"Septic (4-BR perc passed)", notes:"Wooded private community. 30-ft easement access. Site-built only per covenants. $2K cut on 9/22; no further change 9/23.",
    flags:[["PRICE CUT $2K","f-cut"]], link:"https://www.homes.com/lexington-nc/land-for-sale/"},
   {list:"B", addr:"3939 US Hwy 64, Mocksville 27028", price:20000, acre:"0.78 ac", county:"Davie",
-   util:"Public water, septic needed", notes:"Wooded — clearing required. Not in flood zone. Verified Active $20K (the $23K homes.com figure is the adjacent 3929 parcel).",
+   util:"Public water, septic needed", notes:"Wooded — clearing required. Not in flood zone. ⚠ CONFLICT 9/23: live homes.com tile shows the 3939 address at $23,000 with $12K-drop badge (Mossy Oak) — contradicts the 9/19 resolution that $23K was the adjacent 3929 parcel. Two adjacent Mossy Oak parcels; verify directly. Tracked at $20,000.",
    flags:[], link:"https://www.homes.com/mocksville-nc/land-for-sale/"},
   {list:"B", addr:"480 Avenue I, Lexington 27292", price:35000, acre:"0.22 ac", county:"Davidson",
    util:"Septic (2-BR permit on file)", notes:"Old utilities on property. Southmont near High Rock Lake. Tiny lot — abandoned single-wide must be removed.",
@@ -139,10 +139,13 @@ const LOTS = [
    util:"Septic (perc test completed)", notes:"Wooded lot, MLS# 1216237. 27107 W-S address but in Davidson County. ⚠ County records: Flood Zone YES + tax delinquent. Price CONFIRMED $20,000 (was tentative).",
    flags:[["FLOOD — VERIFY","f-flood"]], link:"https://www.movoto.com/winston-salem-nc/3837-eastview-dr-winston-salem-nc-27107/pid_yky91g3wudcb/"},
   {list:"B", addr:"200 Bramblewood Ln, Mocksville 27028", price:49900, acre:"4.06 ac", county:"Davie",
-   util:"Well + septic needed", notes:"Nearly level, 0.25 ac already cleared, easy to clear. No public water/sewer. Private gravel road/easement.",
-   flags:[["UNDER CONTRACT","f-pending"],["VERIFY","f-verify"]], link:"https://www.homes.com/property/200-bramblewood-ln-mocksville-nc/ttrznrenem223/"}
+   util:"Well + septic needed", notes:"Nearly level, 0.25 ac already cleared, easy to clear. No public water/sewer. Private gravel road/easement. 9/23: homes.com tile shows Active $49,900 but LandSearch still Under Contract-Show (7/13) — watch only.",
+   flags:[["UNDER CONTRACT","f-pending"],["VERIFY","f-verify"]], link:"https://www.homes.com/property/200-bramblewood-ln-mocksville-nc/ttrznrenem223/"},
+  {list:"B", addr:"0 Apache Dr, Wallburg 27107", price:25000, acre:"0.52 ac", county:"Davidson",
+   util:"Utilities unverified", notes:"Cherokee Valley subdivision, N. Davidson County. Single-family use; \u2018great neighborhood\u2019 per listing. Triad MLS# 1214944, Active (updated 9/21/26). ⚠ Price from an older homes.com crawl — confirm price + utilities before acting.",
+   flags:[["NEW","f-new"],["VERIFY","f-verify"]], link:"https://www.homes.com/davidson-county-nc/land-for-sale/"}
 ];
-document.getElementById("updated").textContent = "Sept 22, 2026";
+document.getElementById("updated").textContent = "Sept 23, 2026";
 function fmt(n){ return n > 0 ? "$" + n.toLocaleString("en-US") : "—"; }
 function show(which){
   document.getElementById("tabA").classList.toggle("active", which==="A");
