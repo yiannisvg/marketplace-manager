@@ -37,7 +37,7 @@
     .top-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}
     .action-btn{border:1px solid var(--line);background:var(--surface);color:var(--text);padding:10px 14px;border-radius:999px;display:flex;align-items:center;gap:8px;white-space:nowrap;cursor:pointer;box-shadow:0 5px 18px rgba(16,35,30,.05)}
     .action-btn:hover{border-color:var(--accent)}.action-btn:focus-visible{outline:3px solid var(--accent-soft);outline-offset:2px}.action-btn svg{width:18px;height:18px;flex:none}.update-btn{background:var(--accent);border-color:var(--accent);color:#fff}.update-btn:hover{border-color:var(--accent-2);background:var(--accent-2)}.update-btn[aria-busy="true"] svg{animation:spin .75s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
-    .log-tools{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:16px 18px;margin:-6px 0 18px;display:flex;align-items:center;justify-content:space-between;gap:16px}.log-copy{min-width:0}.log-copy b{display:block;font-size:.95rem}.log-copy p{margin:3px 0 0;color:var(--muted);font-size:.82rem}.log-buttons{display:flex;gap:8px;flex-wrap:wrap}.log-buttons .action-btn{box-shadow:none}.log-buttons .update-btn{min-width:max-content}.limit-note{display:flex;gap:10px;align-items:flex-start;background:var(--accent-soft);border-radius:12px;padding:12px 14px;margin:18px 0;color:var(--text);font-size:.9rem}.limit-note svg{width:20px;height:20px;flex:none;color:var(--accent);margin-top:1px}.sheet-actions{display:grid;gap:10px}.sheet-actions .done{display:flex;align-items:center;justify-content:center;gap:8px}.sheet-actions .secondary{border:1px solid var(--line);background:var(--surface);color:var(--text)}
+    .log-tools{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:16px 18px;margin:-6px 0 12px;display:flex;align-items:center;justify-content:space-between;gap:16px}.log-copy{min-width:0}.log-copy b{display:block;font-size:.95rem}.log-copy p{margin:3px 0 0;color:var(--muted);font-size:.82rem}.log-buttons{display:flex;gap:8px;flex-wrap:wrap}.log-buttons .action-btn{box-shadow:none}.log-buttons .update-btn{min-width:max-content}.reminder-card{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:16px;background:var(--accent-soft);border-radius:18px;padding:15px 18px;margin:0 0 18px}.reminder-date{width:58px;height:58px;border-radius:14px;background:var(--accent);color:#fff;display:grid;place-content:center;text-align:center;line-height:1}.reminder-date span{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em}.reminder-date b{font-size:1.55rem;margin-top:4px}.reminder-copy{min-width:0}.reminder-copy span{display:block;color:var(--muted);font-size:.76rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em}.reminder-copy b{display:block;font-size:1.05rem;margin:2px 0}.reminder-copy small{color:var(--muted)}.reminder-card .action-btn{box-shadow:none;background:var(--surface)}.limit-note{display:flex;gap:10px;align-items:flex-start;background:var(--accent-soft);border-radius:12px;padding:12px 14px;margin:18px 0;color:var(--text);font-size:.9rem}.limit-note svg{width:20px;height:20px;flex:none;color:var(--accent);margin-top:1px}.sheet-actions{display:grid;gap:10px}.sheet-actions .done{display:flex;align-items:center;justify-content:center;gap:8px}.sheet-actions .secondary{border:1px solid var(--line);background:var(--surface);color:var(--text)}
     .hero{display:grid;grid-template-columns:1.18fr .82fr;gap:18px;margin-bottom:18px}
     .primary{background:var(--accent);color:#fff;border-radius:30px 12px 30px 12px;padding:clamp(22px,5vw,42px);position:relative;overflow:hidden;min-height:290px;display:flex;flex-direction:column;justify-content:space-between}
     .primary:after{content:"";position:absolute;width:190px;height:190px;border:42px solid rgba(255,255,255,.08);border-radius:50%;right:-80px;top:-75px}
@@ -72,7 +72,7 @@
     dialog{border:0;padding:0;background:transparent;color:var(--text);width:min(460px,calc(100% - 28px));max-width:none}dialog::backdrop{background:rgba(3,12,9,.62)}.sheet{background:var(--surface);border-radius:24px;padding:24px;box-shadow:0 28px 80px rgba(0,0,0,.35)}.sheet-top{display:flex;justify-content:space-between;gap:16px;align-items:start}.sheet h2{font-family:"Source Serif 4",serif;font-size:1.8rem;margin:0}.close{border:0;background:var(--surface-2);color:var(--text);width:36px;height:36px;border-radius:50%;font-size:1.4rem;cursor:pointer}.steps{counter-reset:step;list-style:none;padding:0;margin:22px 0;display:grid;gap:14px}.steps li{counter-increment:step;display:grid;grid-template-columns:34px 1fr;gap:11px}.steps li:before{content:counter(step);display:grid;place-items:center;background:var(--accent);color:#fff;width:30px;height:30px;border-radius:50%;font-weight:700}.steps b{display:block}.steps span{color:var(--muted);font-size:.9rem}.done{width:100%;border:0;background:var(--accent);color:#fff;border-radius:12px;padding:13px;font-weight:700;cursor:pointer}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:22px 0 16px}.field{display:grid;gap:6px}.field.wide{grid-column:1/-1}.field label{font-size:.82rem;font-weight:700;color:var(--muted)}.field input,.field select{width:100%;border:1px solid var(--line);background:var(--bg);color:var(--text);border-radius:10px;padding:12px;font:inherit}.field input:focus,.field select:focus{outline:3px solid var(--accent-soft);border-color:var(--accent)}.form-note{margin:0 0 16px;color:var(--muted);font-size:.82rem}.save-row{display:flex;gap:10px}.save-row button{flex:1}.copy-result{display:none;margin-top:16px;background:var(--accent-soft);border-radius:12px;padding:14px}.copy-result.visible{display:block}.copy-text{display:block;width:100%;min-height:72px;resize:none;border:1px solid var(--line);background:var(--surface);color:var(--text);border-radius:10px;padding:11px 12px;font:600 .92rem/1.4 "DM Sans",sans-serif;margin:0 0 10px}.copy-text:focus{outline:3px solid var(--accent-soft);border-color:var(--accent)}.copy-result button{width:100%;border:0;background:var(--accent);color:#fff;border-radius:10px;padding:12px;font-weight:700;cursor:pointer}.copy-result small{display:block;color:var(--muted);margin-top:8px}.session-entry{animation:appear .25s ease}.session-entry .dot{border-color:var(--gold)}
     .detail-sheet{max-height:min(86vh,760px);display:flex;flex-direction:column}.detail-summary{margin:8px 0 0;color:var(--muted);font-size:.9rem}.detail-help{display:flex;align-items:center;gap:7px;margin:10px 0 0;color:var(--accent);font-size:.8rem;font-weight:700}.detail-help svg{width:16px;height:16px;flex:none}.detail-list{margin-top:18px;overflow-y:auto;overflow-x:hidden;border-top:1px solid var(--line);overscroll-behavior:contain;touch-action:pan-y}.swipe-record{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}.swipe-record:last-child{border-bottom:0}.swipe-delete{position:absolute;inset:0 0 0 auto;width:88px;border:0;background:var(--danger);color:#fff;font-weight:700;cursor:pointer}.detail-row{position:relative;z-index:1;display:grid;grid-template-columns:74px minmax(0,1fr) auto;gap:12px;align-items:center;padding:12px 2px;background:var(--surface);transition:transform .18s ease;will-change:transform}.swipe-record.open .detail-row{transform:translateX(-88px)}.detail-date{appearance:none;border:0;background:transparent;color:var(--text);padding:2px 0;text-align:left;font:700 inherit;text-decoration:underline;text-decoration-style:dotted;text-decoration-color:var(--accent);text-underline-offset:4px;cursor:pointer}.detail-date:focus-visible{outline:3px solid var(--accent-soft);outline-offset:2px;border-radius:4px}.detail-row .detail-main{min-width:0}.detail-row .detail-main b{display:block}.detail-row .detail-main small{display:block;color:var(--muted);margin-top:1px}.detail-row .detail-value{font-weight:700;color:var(--accent);white-space:nowrap}.monthly-list .detail-row{grid-template-columns:88px minmax(0,1fr) auto}.detail-foot{padding-top:14px;color:var(--muted);font-size:.78rem}.danger-btn{border:1px solid var(--danger);background:transparent;color:var(--danger);border-radius:12px;padding:12px;font-weight:700;cursor:pointer}.edit-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}.edit-actions .done{height:100%}
     .location-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:22px 0 10px}.location-choice{min-height:86px;border:1px solid var(--line);background:var(--bg);color:var(--text);border-radius:14px;padding:14px;text-align:left;cursor:pointer;display:flex;flex-direction:column;justify-content:space-between}.location-choice:hover{border-color:var(--accent)}.location-choice:focus-visible{outline:3px solid var(--accent-soft);outline-offset:2px}.location-choice span{color:var(--muted);font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em}.location-choice b{font-size:1.08rem}.location-hint{margin:0;color:var(--muted);font-size:.82rem}
-    @media(max-width:720px){.hero,.section-grid,.dose-hero{grid-template-columns:1fr}.summary{grid-template-columns:1fr 1fr}.primary{min-height:255px}.topline{align-items:flex-start;flex-direction:column}.top-actions{width:100%;justify-content:flex-start}.topline h1{font-size:2.25rem}.action-btn{padding:10px 13px}.home-btn span{display:none}.home-btn{padding:11px}.log-tools{align-items:stretch;flex-direction:column}.log-buttons{display:grid;grid-template-columns:1fr 1fr}.log-buttons .update-btn{grid-column:1/-1;justify-content:center}.log-buttons .action-btn{justify-content:center}.dose-row{grid-template-columns:65px 1fr 40px}.tl-row{grid-template-columns:76px 14px 1fr}.card{box-shadow:none}.tabs{width:100%}.tab{flex:1;padding:10px 8px}.chart text{font-size:11px}}
+    @media(max-width:720px){.hero,.section-grid,.dose-hero{grid-template-columns:1fr}.summary{grid-template-columns:1fr 1fr}.primary{min-height:255px}.topline{align-items:flex-start;flex-direction:column}.top-actions{width:100%;justify-content:flex-start}.topline h1{font-size:2.25rem}.action-btn{padding:10px 13px}.home-btn span{display:none}.home-btn{padding:11px}.log-tools{align-items:stretch;flex-direction:column}.log-buttons{display:grid;grid-template-columns:1fr 1fr}.log-buttons .update-btn{grid-column:1/-1;justify-content:center}.log-buttons .action-btn{justify-content:center}.reminder-card{grid-template-columns:auto minmax(0,1fr)}.reminder-card .action-btn{grid-column:1/-1;justify-content:center}.dose-row{grid-template-columns:65px 1fr 40px}.tl-row{grid-template-columns:76px 14px 1fr}.card{box-shadow:none}.tabs{width:100%}.tab{flex:1;padding:10px 8px}.chart text{font-size:11px}}
     @media(max-width:430px){.form-grid{grid-template-columns:1fr}.field.wide{grid-column:auto}}
     @media(max-width:390px){.summary{grid-template-columns:1fr}.stat.wide{grid-column:auto}.big-number{font-size:4rem}.brands{grid-template-columns:1fr}.goal-row{gap:12px}.goal-row b{font-size:1rem}}
     @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important}}
@@ -105,6 +105,14 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4v16M4 12h16"/></svg><span>Shot location</span>
       </button>
     </div>
+  </section>
+
+  <section class="reminder-card" aria-label="Next shot reminder">
+    <div class="reminder-date" aria-hidden="true"><span id="reminderMonth">Sep</span><b id="reminderDay">24</b></div>
+    <div class="reminder-copy"><span>Next shot</span><b id="reminderWhen">Thursday · 8:00 PM</b><small id="reminderSite">Lower-right abdomen · rotation starts here</small></div>
+    <button class="action-btn" id="reminderBtn" type="button" aria-haspopup="dialog">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9h12M8 3v3m8-3v3M5 5h14v16H5z"/><path d="M9 14h6m-3-3v6"/></svg><span>Add reminder</span>
+    </button>
   </section>
 
   <section class="hero" aria-label="Progress summary">
@@ -275,6 +283,22 @@
   </div>
 </dialog>
 
+<dialog id="reminderDialog" aria-labelledby="reminderTitle">
+  <div class="sheet">
+    <div class="sheet-top"><div><div class="label" style="color:var(--accent)">Next weekly shot</div><h2 id="reminderTitle">Add calendar reminder</h2></div><button class="close" type="button" data-close="reminderDialog" aria-label="Close">×</button></div>
+    <form id="reminderForm">
+      <div class="form-grid">
+        <div class="field"><label for="reminderDate">Day</label><input id="reminderDate" name="date" type="date" value="2026-09-24" required /></div>
+        <div class="field"><label for="reminderTime">Time</label><input id="reminderTime" name="time" type="time" value="20:00" required /></div>
+        <div class="field wide"><label for="reminderLocation">Abdomen location</label><select id="reminderLocation" name="location" required><option value="abdomen lower right" selected>Lower right</option><option value="abdomen lower left">Lower left</option><option value="abdomen upper right">Upper right</option><option value="abdomen upper left">Upper left</option></select></div>
+      </div>
+      <p class="form-note">Rotation order: lower right → lower left → upper right → upper left. Change the time above if needed; your Calendar will keep the reminder after it is added.</p>
+      <button class="done" type="submit">Add to Calendar</button>
+    </form>
+    <div class="copy-result" id="reminderResult" aria-live="polite"><b>Calendar file ready.</b><small id="reminderStatus">Open the downloaded file and tap Add to save the reminder.</small></div>
+  </div>
+</dialog>
+
 <dialog id="recordEditDialog" aria-labelledby="recordEditTitle">
   <div class="sheet">
     <div class="sheet-top"><div><div class="label" style="color:var(--accent)" id="recordEditLabel">Edit date</div><h2 id="recordEditTitle">Change entry date</h2></div><button class="close" type="button" data-close="recordEditDialog" aria-label="Close">×</button></div>
@@ -342,8 +366,9 @@
   const locationDialog=document.getElementById('locationDialog');
   const shotsDetailDialog=document.getElementById('shotsDetailDialog');
   const weightDetailDialog=document.getElementById('weightDetailDialog');
+  const reminderDialog=document.getElementById('reminderDialog');
   const recordEditDialog=document.getElementById('recordEditDialog');
-  const allDialogs=[updateDialog,homeDialog,weightDialog,shotDialog,locationDialog,shotsDetailDialog,weightDetailDialog,recordEditDialog];
+  const allDialogs=[updateDialog,homeDialog,weightDialog,shotDialog,locationDialog,shotsDetailDialog,weightDetailDialog,reminderDialog,recordEditDialog];
   const today=()=>{
     const d=new Date(), offset=d.getTimezoneOffset();
     return new Date(d.getTime()-offset*60000).toISOString().slice(0,10);
@@ -367,6 +392,10 @@
     shotDialog.showModal();
   });
   document.getElementById('locationBtn').addEventListener('click',()=>locationDialog.showModal());
+  document.getElementById('reminderBtn').addEventListener('click',()=>{
+    document.getElementById('reminderResult').classList.remove('visible');
+    reminderDialog.showModal();
+  });
   document.querySelectorAll('.location-choice').forEach(button=>button.addEventListener('click',()=>{
     document.getElementById('site').value=button.dataset.site;
     document.getElementById('shotDate').value=today();
@@ -374,6 +403,43 @@
     locationDialog.close();
     shotDialog.showModal();
   }));
+  const formatReminderTime=value=>{
+    const [hours,minutes]=value.split(':').map(Number);
+    return new Date(2026,0,1,hours,minutes).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
+  };
+  const rotationSites=['abdomen lower right','abdomen lower left','abdomen upper right','abdomen upper left'];
+  const addDays=(date,days)=>{
+    const next=parseDate(date);next.setDate(next.getDate()+days);
+    const offset=next.getTimezoneOffset();
+    return new Date(next.getTime()-offset*60000).toISOString().slice(0,10);
+  };
+  const updateReminderCard=(date,time,location,isStart=false)=>{
+    const parsed=parseDate(date);
+    document.getElementById('reminderMonth').textContent=parsed.toLocaleDateString('en-US',{month:'short'});
+    document.getElementById('reminderDay').textContent=parsed.getDate();
+    document.getElementById('reminderWhen').textContent=`${parsed.toLocaleDateString('en-US',{weekday:'long'})} · ${formatReminderTime(time)}`;
+    const site=location.replace('abdomen ','').replace(/\b\w/g,letter=>letter.toUpperCase());
+    document.getElementById('reminderSite').textContent=`${site.replace('Right','right').replace('Left','left')} abdomen · ${isStart?'rotation starts here':'next in rotation'}`;
+  };
+  const latestLoggedShotDate='2026-09-17';
+  document.getElementById('reminderDate').value=addDays(latestLoggedShotDate,7);
+  updateReminderCard(document.getElementById('reminderDate').value,document.getElementById('reminderTime').value,document.getElementById('reminderLocation').value,true);
+  const calendarStamp=()=>new Date().toISOString().replace(/[-:]/g,'').replace(/\.\d{3}/,'');
+  document.getElementById('reminderForm').addEventListener('submit',event=>{
+    event.preventDefault();
+    const form=new FormData(event.currentTarget);
+    const date=form.get('date'),time=form.get('time'),location=form.get('location');
+    updateReminderCard(date,time,location);
+    const compactDate=date.replace(/-/g,''),compactTime=time.replace(':','')+'00';
+    const site=location.replace('abdomen ','');
+    const lines=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//GLP-1 Report//Shot Reminder//EN','CALSCALE:GREGORIAN','METHOD:PUBLISH','BEGIN:VEVENT',`UID:glp1-shot-${compactDate}-${compactTime}@report`,`DTSTAMP:${calendarStamp()}`,`DTSTART;TZID=America/New_York:${compactDate}T${compactTime}`,`DTEND;TZID=America/New_York:${compactDate}T${compactTime}`,'SUMMARY:Weekly Mounjaro shot',`LOCATION:Abdomen — ${site}`,'DESCRIPTION:Injection location: abdomen — '+site+'. Rotation: lower right → lower left → upper right → upper left.','BEGIN:VALARM','TRIGGER:-PT30M','ACTION:DISPLAY','DESCRIPTION:Weekly Mounjaro shot reminder','END:VALARM','END:VEVENT','END:VCALENDAR'];
+    const blob=new Blob([lines.join('\r\n')],{type:'text/calendar;charset=utf-8'});
+    const url=URL.createObjectURL(blob),link=document.createElement('a');
+    link.href=url;link.download=`mounjaro-shot-${date}.ics`;document.body.appendChild(link);link.click();link.remove();
+    window.setTimeout(()=>URL.revokeObjectURL(url),1000);
+    document.getElementById('reminderResult').classList.add('visible');
+    document.getElementById('reminderStatus').textContent=`${longDate(date)} at ${formatReminderTime(time)} · ${site}. Open the downloaded file and tap Add.`;
+  });
   document.getElementById('closeDialog').addEventListener('click',()=>homeDialog.close());
   document.getElementById('doneDialog').addEventListener('click',()=>homeDialog.close());
   document.querySelectorAll('[data-close]').forEach(button=>button.addEventListener('click',()=>document.getElementById(button.dataset.close).close()));
@@ -509,6 +575,12 @@
     document.querySelector('#shotsDetailDialog .label').textContent=`${shotTotal} shots logged`;
     document.querySelector('#shotsDetailDialog .detail-summary').textContent=`All ${shotTotal} shots have exact dates.`;
     document.getElementById('shotsSummaryBtn').setAttribute('aria-label',`${shotTotal} total shots. View exact dates and doses.`);
+    const currentRotationIndex=rotationSites.indexOf(site);
+    const nextSite=rotationSites[(currentRotationIndex>=0?currentRotationIndex+1:0)%rotationSites.length];
+    const nextReminderDate=addDays(date,7);
+    document.getElementById('reminderDate').value=nextReminderDate;
+    document.getElementById('reminderLocation').value=nextSite;
+    updateReminderCard(nextReminderDate,document.getElementById('reminderTime').value,nextSite);
     const message=`Log shot: ${shortDate(date)}, ${medication} ${dose} mg, ${site}`;
     document.getElementById('shotMessage').value=message;
     document.getElementById('shotResult').classList.add('visible');
