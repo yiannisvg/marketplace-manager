@@ -103,7 +103,7 @@
 <body>
 <main class="app">
   <div class="topline">
-    <div><p id="progressDate">Progress through September 17, 2026</p><h1>Your GLP-1 snapshot</h1></div>
+    <div><p id="progressDate">Progress through September 24, 2026</p><h1>Your GLP-1 snapshot</h1></div>
     <div class="top-actions">
       <button class="action-btn home-btn" id="homeBtn" type="button" aria-label="Add to Home Screen" aria-haspopup="dialog">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12m0-12 4 4m-4-4L8 7"/><path d="M5 12v7h14v-7"/></svg><span>Add to Home Screen</span>
@@ -130,8 +130,8 @@
   </section>
 
   <section class="reminder-card" aria-label="Next shot reminder">
-    <div class="reminder-date" aria-hidden="true"><span id="reminderMonth">Sep</span><b id="reminderDay">24</b></div>
-    <div class="reminder-copy"><span>Next shot</span><b id="reminderWhen">Thursday · 8:00 PM</b><small id="reminderSite">Lower-right abdomen · rotation starts here</small></div>
+    <div class="reminder-date" aria-hidden="true"><span id="reminderMonth">Oct</span><b id="reminderDay">1</b></div>
+    <div class="reminder-copy"><span>Next shot</span><b id="reminderWhen">Thursday · 8:00 PM</b><small id="reminderSite">Lower-left abdomen · next in rotation</small></div>
     <button class="action-btn" id="reminderBtn" type="button" aria-haspopup="dialog">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9h12M8 3v3m8-3v3M5 5h14v16H5z"/><path d="M9 14h6m-3-3v6"/></svg><span>Add reminder</span>
     </button>
@@ -143,8 +143,8 @@
       <div><div class="goal-row"><div><small>Goal</small><b>200 lb</b></div><div style="flex:1"><small id="goalCopy">59.8% of 102.8 lb goal loss</small><div class="progress-track" id="goalTrack" aria-label="59.8 percent toward weight goal"><span id="goalProgress" style="width:59.8%"></span></div></div></div><span class="tap-cue">View monthly weights →</span></div>
     </button>
     <div class="summary">
-      <button class="stat summary-button" id="shotsSummaryBtn" type="button" aria-haspopup="dialog" aria-label="25 total shots. View exact dates and doses."><div class="kicker">Total shots</div><div class="value" id="heroShotTotal">25</div><div class="tap-cue">View dates &amp; doses →</div></button>
-      <article class="stat"><div class="kicker">Current dose</div><div class="value"><span id="currentDose">7.5</span><span class="unit">mg</span></div><div class="sub" id="currentDoseDate">Latest: Sep 17</div></article>
+      <button class="stat summary-button" id="shotsSummaryBtn" type="button" aria-haspopup="dialog" aria-label="26 total shots. View exact dates and doses."><div class="kicker">Total shots</div><div class="value" id="heroShotTotal">26</div><div class="tap-cue">View dates &amp; doses →</div></button>
+      <article class="stat"><div class="kicker">Current dose</div><div class="value"><span id="currentDose">7.5</span><span class="unit">mg</span></div><div class="sub" id="currentDoseDate">Latest: Sep 24</div></article>
       <article class="stat wide"><div class="kicker">Average pace</div><div class="value"><span id="heroWeekPace">2.56</span><span class="unit">lb/week</span></div><div class="sub" id="paceDays">Calculated across 168 days</div></article>
     </div>
   </section>
@@ -183,11 +183,11 @@
 
   <section class="panel" id="doses" role="tabpanel" aria-labelledby="dosesTab" hidden>
     <div class="dose-hero">
-      <article class="dose-total"><span class="label">Treatment total</span><strong id="doseShotTotal">25</strong><span>shots logged</span><div class="brands"><div class="brand"><b id="zepboundTotal">9</b><span>Zepbound</span></div><div class="brand"><b id="mounjaroTotal">16</b><span>Mounjaro</span></div></div><div class="medicine-total"><span>Total medicine</span><b><span id="combinedMg">87.5</span> mg</b><div class="medicine-split"><span id="zepboundMg">22.5</span> mg Zepbound · <span id="mounjaroMg">65</span> mg Mounjaro</div></div></article>
+      <article class="dose-total"><span class="label">Treatment total</span><strong id="doseShotTotal">26</strong><span>shots logged</span><div class="brands"><div class="brand"><b id="zepboundTotal">9</b><span>Zepbound</span></div><div class="brand"><b id="mounjaroTotal">17</b><span>Mounjaro</span></div></div><div class="medicine-total"><span>Total medicine</span><b><span id="combinedMg">95</span> mg</b><div class="medicine-split"><span id="zepboundMg">22.5</span> mg Zepbound · <span id="mounjaroMg">72.5</span> mg Mounjaro</div></div></article>
       <article class="card dose-bars"><h2>Dose breakdown</h2>
         <div class="dose-row" data-dose="2.5"><span>2.5 mg</span><div class="bar"><i style="width:100%"></i></div><b>17</b></div>
         <div class="dose-row" data-dose="5"><span>5 mg</span><div class="bar"><i style="width:35.3%"></i></div><b>6</b></div>
-        <div class="dose-row" data-dose="7.5"><span>7.5 mg</span><div class="bar"><i style="width:11.8%"></i></div><b>2</b></div>
+        <div class="dose-row" data-dose="7.5"><span>7.5 mg</span><div class="bar"><i style="width:17.6%"></i></div><b>3</b></div>
       </article>
     </div>
     <article class="timeline" id="doseTimeline">
@@ -196,7 +196,8 @@
       <div class="tl-row"><div class="date">Early Jun</div><div class="dot"></div><div class="event"><b>Continued 2.5 mg</b><small>Switched from Zepbound to Mounjaro after 9 shots</small></div></div>
       <div class="tl-row"><div class="date">Jul 30</div><div class="dot"></div><div class="event"><b>Moved to 5 mg</b><small>Six weekly doses</small></div></div>
       <div class="tl-row"><div class="date">Sep 10</div><div class="dot"></div><div class="event"><b>Moved to 7.5 mg</b><small>Mounjaro</small></div></div>
-      <div class="tl-row"><div class="date">Sep 17</div><div class="dot"></div><div class="event"><b>7.5 mg Mounjaro</b><small>Abdomen · upper left · Latest logged shot</small></div></div>
+      <div class="tl-row"><div class="date">Sep 17</div><div class="dot"></div><div class="event"><b>7.5 mg Mounjaro</b><small>Abdomen · upper left</small></div></div>
+      <div class="tl-row"><div class="date">Sep 24</div><div class="dot"></div><div class="event"><b>7.5 mg Mounjaro</b><small>Abdomen · lower right · No pain · Latest logged shot</small></div></div>
     </article>
   </section>
 
@@ -205,17 +206,18 @@
       <div><h2>Report notes</h2><p class="desc">How the combined record was reconciled.</p></div>
       <div class="note"><b>Sources combined</b><p>Glapp, MeAgain and Lilly Health screenshots supplied for this report.</p></div>
       <div class="note"><b>Weight cleanup</b><p>The 200 lb entry from April 20 and 161.6 lb entry from April 27 were treated as erroneous and removed from calculations.</p></div>
-      <div class="note"><b>Shot count updated</b><p>The current count is 25: 9 Zepbound and 16 Mounjaro. Dose total: seventeen 2.5 mg, six 5 mg and two 7.5 mg shots — 22.5 mg Zepbound, 65 mg Mounjaro and 87.5 mg combined.</p></div>
-      <div class="note"><b>Symptoms</b><p>No side effects were logged in the supplied records. Injection pain was recorded as 0/10.</p></div>
+      <div class="note"><b>Shot count updated</b><p>The current count is 26: 9 Zepbound and 17 Mounjaro. Dose total: seventeen 2.5 mg, six 5 mg and three 7.5 mg shots — 22.5 mg Zepbound, 72.5 mg Mounjaro and 95 mg combined.</p></div>
+      <div class="note"><b>Symptoms</b><p>No side effects were logged in the supplied records. Shot 26 was recorded with no injection pain.</p></div>
     </article>
   </section>
-  <p class="stamp">Personal progress summary • Data through Sep 17, 2026 • Not medical advice</p>
+  <p class="stamp">Personal progress summary • Data through Sep 24, 2026 • Not medical advice</p>
 </main>
 
 <dialog id="shotsDetailDialog" aria-labelledby="shotsDetailTitle">
   <div class="sheet detail-sheet">
-    <div class="sheet-top"><div><div class="label" style="color:var(--accent)">25 shots logged</div><h2 id="shotsDetailTitle">Exact dates &amp; doses</h2><p class="detail-summary">All 25 shots have exact dates.</p><p class="detail-help"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>Tap a date to edit · swipe left to delete</p></div><button class="close" type="button" data-close="shotsDetailDialog" aria-label="Close">×</button></div>
+    <div class="sheet-top"><div><div class="label" style="color:var(--accent)">26 shots logged</div><h2 id="shotsDetailTitle">Exact dates &amp; doses</h2><p class="detail-summary">All 26 shots have exact dates.</p><p class="detail-help"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>Tap a date to edit · swipe left to delete</p></div><button class="close" type="button" data-close="shotsDetailDialog" aria-label="Close">×</button></div>
     <div class="detail-list" id="shotsDetailList">
+      <div class="detail-row"><div class="detail-date">Sep 24</div><div class="detail-main"><b>Mounjaro</b><small>Shot 26 · Abdomen lower right · No pain</small></div><div class="detail-value">7.5 mg</div></div>
       <div class="detail-row"><div class="detail-date">Sep 17</div><div class="detail-main"><b>Mounjaro</b><small>Shot 25</small></div><div class="detail-value">7.5 mg</div></div>
       <div class="detail-row"><div class="detail-date">Sep 10</div><div class="detail-main"><b>Mounjaro</b><small>Shot 24</small></div><div class="detail-value">7.5 mg</div></div>
       <div class="detail-row"><div class="detail-date">Sep 3</div><div class="detail-main"><b>Mounjaro</b><small>Shot 23</small></div><div class="detail-value">5 mg</div></div>
@@ -310,9 +312,9 @@
     <div class="sheet-top"><div><div class="label" style="color:var(--accent)">Next weekly shot</div><h2 id="reminderTitle">Add calendar reminder</h2></div><button class="close" type="button" data-close="reminderDialog" aria-label="Close">×</button></div>
     <form id="reminderForm">
       <div class="form-grid">
-        <div class="field"><label for="reminderDate">Day</label><input id="reminderDate" name="date" type="date" value="2026-09-24" required /></div>
+        <div class="field"><label for="reminderDate">Day</label><input id="reminderDate" name="date" type="date" value="2026-10-01" required /></div>
         <div class="field"><label for="reminderTime">Time</label><input id="reminderTime" name="time" type="time" value="20:00" required /></div>
-        <div class="field wide"><label for="reminderLocation">Abdomen location</label><select id="reminderLocation" name="location" required><option value="abdomen lower right" selected>Lower right</option><option value="abdomen lower left">Lower left</option><option value="abdomen upper right">Upper right</option><option value="abdomen upper left">Upper left</option></select></div>
+        <div class="field wide"><label for="reminderLocation">Abdomen location</label><select id="reminderLocation" name="location" required><option value="abdomen lower right">Lower right</option><option value="abdomen lower left" selected>Lower left</option><option value="abdomen upper right">Upper right</option><option value="abdomen upper left">Upper left</option></select></div>
       </div>
       <p class="form-note">Rotation order: lower right → lower left → upper right → upper left. Change the time above if needed; your Calendar will keep the reminder after it is added.</p>
       <button class="done" type="submit">Add to Calendar</button>
@@ -443,9 +445,9 @@
     const site=location.replace('abdomen ','').replace(/\b\w/g,letter=>letter.toUpperCase());
     document.getElementById('reminderSite').textContent=`${site.replace('Right','right').replace('Left','left')} abdomen · ${isStart?'rotation starts here':'next in rotation'}`;
   };
-  const latestLoggedShotDate='2026-09-17';
+  const latestLoggedShotDate='2026-09-24';
   document.getElementById('reminderDate').value=addDays(latestLoggedShotDate,7);
-  updateReminderCard(document.getElementById('reminderDate').value,document.getElementById('reminderTime').value,document.getElementById('reminderLocation').value,true);
+  updateReminderCard(document.getElementById('reminderDate').value,document.getElementById('reminderTime').value,document.getElementById('reminderLocation').value);
   const calendarStamp=()=>new Date().toISOString().replace(/[-:]/g,'').replace(/\.\d{3}/,'');
   document.getElementById('reminderForm').addEventListener('submit',event=>{
     event.preventDefault();
@@ -539,10 +541,10 @@
     document.getElementById('copyWeight').textContent='Copy update text';
   });
 
-  let shotTotal=25;
-  const brandCounts={Zepbound:9,Mounjaro:16};
-  const brandMg={Zepbound:22.5,Mounjaro:65};
-  const doseCounts={'2.5':17,'5':6,'7.5':2};
+  let shotTotal=26;
+  const brandCounts={Zepbound:9,Mounjaro:17};
+  const brandMg={Zepbound:22.5,Mounjaro:72.5};
+  const doseCounts={'2.5':17,'5':6,'7.5':3};
   const formatMg=value=>Number.isInteger(value)?String(value):value.toFixed(1);
   const renderDoses=()=>{
     document.getElementById('heroShotTotal').textContent=shotTotal;
