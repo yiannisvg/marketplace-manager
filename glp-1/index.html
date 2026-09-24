@@ -71,6 +71,7 @@
     .stamp{margin:22px 2px 0;color:var(--muted);font-size:.78rem}
     dialog{border:0;padding:0;background:transparent;color:var(--text);width:min(460px,calc(100% - 28px));max-width:none}dialog::backdrop{background:rgba(3,12,9,.62)}.sheet{background:var(--surface);border-radius:24px;padding:24px;box-shadow:0 28px 80px rgba(0,0,0,.35)}.sheet-top{display:flex;justify-content:space-between;gap:16px;align-items:start}.sheet h2{font-family:"Source Serif 4",serif;font-size:1.8rem;margin:0}.close{border:0;background:var(--surface-2);color:var(--text);width:36px;height:36px;border-radius:50%;font-size:1.4rem;cursor:pointer}.steps{counter-reset:step;list-style:none;padding:0;margin:22px 0;display:grid;gap:14px}.steps li{counter-increment:step;display:grid;grid-template-columns:34px 1fr;gap:11px}.steps li:before{content:counter(step);display:grid;place-items:center;background:var(--accent);color:#fff;width:30px;height:30px;border-radius:50%;font-weight:700}.steps b{display:block}.steps span{color:var(--muted);font-size:.9rem}.done{width:100%;border:0;background:var(--accent);color:#fff;border-radius:12px;padding:13px;font-weight:700;cursor:pointer}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:22px 0 16px}.field{display:grid;gap:6px}.field.wide{grid-column:1/-1}.field label{font-size:.82rem;font-weight:700;color:var(--muted)}.field input,.field select{width:100%;border:1px solid var(--line);background:var(--bg);color:var(--text);border-radius:10px;padding:12px;font:inherit}.field input:focus,.field select:focus{outline:3px solid var(--accent-soft);border-color:var(--accent)}.form-note{margin:0 0 16px;color:var(--muted);font-size:.82rem}.save-row{display:flex;gap:10px}.save-row button{flex:1}.copy-result{display:none;margin-top:16px;background:var(--accent-soft);border-radius:12px;padding:14px}.copy-result.visible{display:block}.copy-text{display:block;width:100%;min-height:72px;resize:none;border:1px solid var(--line);background:var(--surface);color:var(--text);border-radius:10px;padding:11px 12px;font:600 .92rem/1.4 "DM Sans",sans-serif;margin:0 0 10px}.copy-text:focus{outline:3px solid var(--accent-soft);border-color:var(--accent)}.copy-result button{width:100%;border:0;background:var(--accent);color:#fff;border-radius:10px;padding:12px;font-weight:700;cursor:pointer}.copy-result small{display:block;color:var(--muted);margin-top:8px}.session-entry{animation:appear .25s ease}.session-entry .dot{border-color:var(--gold)}
     .detail-sheet{max-height:min(86vh,760px);display:flex;flex-direction:column}.detail-summary{margin:8px 0 0;color:var(--muted);font-size:.9rem}.detail-help{display:flex;align-items:center;gap:7px;margin:10px 0 0;color:var(--accent);font-size:.8rem;font-weight:700}.detail-help svg{width:16px;height:16px;flex:none}.detail-list{margin-top:18px;overflow-y:auto;overflow-x:hidden;border-top:1px solid var(--line);overscroll-behavior:contain;touch-action:pan-y}.swipe-record{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}.swipe-record:last-child{border-bottom:0}.swipe-delete{position:absolute;inset:0 0 0 auto;width:88px;border:0;background:var(--danger);color:#fff;font-weight:700;cursor:pointer}.detail-row{position:relative;z-index:1;display:grid;grid-template-columns:74px minmax(0,1fr) auto;gap:12px;align-items:center;padding:12px 2px;background:var(--surface);transition:transform .18s ease;will-change:transform}.swipe-record.open .detail-row{transform:translateX(-88px)}.detail-date{appearance:none;border:0;background:transparent;color:var(--text);padding:2px 0;text-align:left;font:700 inherit;text-decoration:underline;text-decoration-style:dotted;text-decoration-color:var(--accent);text-underline-offset:4px;cursor:pointer}.detail-date:focus-visible{outline:3px solid var(--accent-soft);outline-offset:2px;border-radius:4px}.detail-row .detail-main{min-width:0}.detail-row .detail-main b{display:block}.detail-row .detail-main small{display:block;color:var(--muted);margin-top:1px}.detail-row .detail-value{font-weight:700;color:var(--accent);white-space:nowrap}.monthly-list .detail-row{grid-template-columns:88px minmax(0,1fr) auto}.detail-foot{padding-top:14px;color:var(--muted);font-size:.78rem}.danger-btn{border:1px solid var(--danger);background:transparent;color:var(--danger);border-radius:12px;padding:12px;font-weight:700;cursor:pointer}.edit-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}.edit-actions .done{height:100%}
+    .location-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:22px 0 10px}.location-choice{min-height:86px;border:1px solid var(--line);background:var(--bg);color:var(--text);border-radius:14px;padding:14px;text-align:left;cursor:pointer;display:flex;flex-direction:column;justify-content:space-between}.location-choice:hover{border-color:var(--accent)}.location-choice:focus-visible{outline:3px solid var(--accent-soft);outline-offset:2px}.location-choice span{color:var(--muted);font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em}.location-choice b{font-size:1.08rem}.location-hint{margin:0;color:var(--muted);font-size:.82rem}
     @media(max-width:720px){.hero,.section-grid,.dose-hero{grid-template-columns:1fr}.summary{grid-template-columns:1fr 1fr}.primary{min-height:255px}.topline{align-items:flex-start;flex-direction:column}.top-actions{width:100%;justify-content:flex-start}.topline h1{font-size:2.25rem}.action-btn{padding:10px 13px}.home-btn span{display:none}.home-btn{padding:11px}.log-tools{align-items:stretch;flex-direction:column}.log-buttons{display:grid;grid-template-columns:1fr 1fr}.log-buttons .update-btn{grid-column:1/-1;justify-content:center}.log-buttons .action-btn{justify-content:center}.dose-row{grid-template-columns:65px 1fr 40px}.tl-row{grid-template-columns:76px 14px 1fr}.card{box-shadow:none}.tabs{width:100%}.tab{flex:1;padding:10px 8px}.chart text{font-size:11px}}
     @media(max-width:430px){.form-grid{grid-template-columns:1fr}.field.wide{grid-column:auto}}
     @media(max-width:390px){.summary{grid-template-columns:1fr}.stat.wide{grid-column:auto}.big-number{font-size:4rem}.brands{grid-template-columns:1fr}.goal-row{gap:12px}.goal-row b{font-size:1rem}}
@@ -99,6 +100,9 @@
       </button>
       <button class="action-btn" id="shotBtn" type="button" aria-haspopup="dialog">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m14 4 6 6M12 6l6 6M5 13l6 6M3 21l4-4m2-2 7-7"/></svg><span>Log shot</span>
+      </button>
+      <button class="action-btn" id="locationBtn" type="button" aria-haspopup="dialog">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4v16M4 12h16"/></svg><span>Shot location</span>
       </button>
     </div>
   </section>
@@ -249,12 +253,25 @@
         <div class="field"><label for="shotDate">Date</label><input id="shotDate" name="date" type="date" required /></div>
         <div class="field"><label for="medication">Medication</label><select id="medication" name="medication" required><option>Mounjaro</option><option>Zepbound</option></select></div>
         <div class="field"><label for="dose">Dose (mg)</label><select id="dose" name="dose" required><option value="2.5">2.5 mg</option><option value="5">5 mg</option><option value="7.5" selected>7.5 mg</option><option value="10">10 mg</option><option value="12.5">12.5 mg</option><option value="15">15 mg</option></select></div>
-        <div class="field"><label for="site">Injection site</label><select id="site" name="site" required><option value="abdomen upper right">Abdomen · upper right</option><option value="abdomen upper left">Abdomen · upper left</option><option value="abdomen lower right">Abdomen · lower right</option><option value="abdomen lower left">Abdomen · lower left</option><option value="right thigh">Right thigh</option><option value="left thigh">Left thigh</option><option value="right upper arm">Right upper arm</option><option value="left upper arm">Left upper arm</option></select></div>
+        <div class="field"><label for="site">Abdomen location</label><select id="site" name="site" required><option value="abdomen upper right">Upper right</option><option value="abdomen upper left">Upper left</option><option value="abdomen lower right">Lower right</option><option value="abdomen lower left">Lower left</option></select></div>
       </div>
       <p class="form-note">This updates the page for this visit only. Copy the entry and paste it into your Taki chat before closing.</p>
       <button class="done" type="submit">Add for this session</button>
     </form>
     <div class="copy-result" id="shotResult" aria-live="polite"><textarea class="copy-text" id="shotMessage" readonly aria-label="Shot update text"></textarea><button type="button" id="copyShot">Copy update text</button><small id="shotCopyStatus">Then open your Taki chat and paste it there. If copying is blocked, press and hold the text above.</small></div>
+  </div>
+</dialog>
+
+<dialog id="locationDialog" aria-labelledby="locationTitle">
+  <div class="sheet">
+    <div class="sheet-top"><div><div class="label" style="color:var(--accent)">Shot location</div><h2 id="locationTitle">Choose abdomen area</h2></div><button class="close" type="button" data-close="locationDialog" aria-label="Close">×</button></div>
+    <div class="location-grid" aria-label="Abdomen shot locations">
+      <button class="location-choice" type="button" data-site="abdomen upper right"><span>Abdomen</span><b>Upper right</b></button>
+      <button class="location-choice" type="button" data-site="abdomen upper left"><span>Abdomen</span><b>Upper left</b></button>
+      <button class="location-choice" type="button" data-site="abdomen lower right"><span>Abdomen</span><b>Lower right</b></button>
+      <button class="location-choice" type="button" data-site="abdomen lower left"><span>Abdomen</span><b>Lower left</b></button>
+    </div>
+    <p class="location-hint">Choose a location, then finish logging the shot.</p>
   </div>
 </dialog>
 
@@ -322,10 +339,11 @@
   const homeDialog=document.getElementById('homeDialog');
   const weightDialog=document.getElementById('weightDialog');
   const shotDialog=document.getElementById('shotDialog');
+  const locationDialog=document.getElementById('locationDialog');
   const shotsDetailDialog=document.getElementById('shotsDetailDialog');
   const weightDetailDialog=document.getElementById('weightDetailDialog');
   const recordEditDialog=document.getElementById('recordEditDialog');
-  const allDialogs=[updateDialog,homeDialog,weightDialog,shotDialog,shotsDetailDialog,weightDetailDialog,recordEditDialog];
+  const allDialogs=[updateDialog,homeDialog,weightDialog,shotDialog,locationDialog,shotsDetailDialog,weightDetailDialog,recordEditDialog];
   const today=()=>{
     const d=new Date(), offset=d.getTimezoneOffset();
     return new Date(d.getTime()-offset*60000).toISOString().slice(0,10);
@@ -348,6 +366,14 @@
     document.getElementById('shotResult').classList.remove('visible');
     shotDialog.showModal();
   });
+  document.getElementById('locationBtn').addEventListener('click',()=>locationDialog.showModal());
+  document.querySelectorAll('.location-choice').forEach(button=>button.addEventListener('click',()=>{
+    document.getElementById('site').value=button.dataset.site;
+    document.getElementById('shotDate').value=today();
+    document.getElementById('shotResult').classList.remove('visible');
+    locationDialog.close();
+    shotDialog.showModal();
+  }));
   document.getElementById('closeDialog').addEventListener('click',()=>homeDialog.close());
   document.getElementById('doneDialog').addEventListener('click',()=>homeDialog.close());
   document.querySelectorAll('[data-close]').forEach(button=>button.addEventListener('click',()=>document.getElementById(button.dataset.close).close()));
