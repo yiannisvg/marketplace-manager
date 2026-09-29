@@ -95,11 +95,14 @@ const LOTS = [
    util:"City water + sewer", notes:"Sloped and wooded — clearing/grading needed. Still Pending at $23,000 (Triad MLS 1134905, under contract since 5/1/26). Watch for future back-on-market.",
    flags:[[["PENDING","f-pending"]],[["VERIFY","f-verify"]]], link:"https://www.homes.com/property/351-honeysuckle-st-mocksville-nc/04vpc0zy4z6f7/"},
   {list:"A", addr:"0 Green Point Rd, Winston-Salem 27107", price:20000, acre:"0.17 ac", county:"Forsyth",
-   util:"Public water + public sewer", notes:"Flat/level city lot. RM18, no HOA. Listed Oct 2025 (long-listed). New to tracking 9/27. ⚠ STATUS CONFLICT 9/28 — Movoto shows Delisted Nov 2025 vs Weichert/Compass show $20K Active — direct MLS check needed before pursuing.",
+   util:"Public water + public sewer", notes:"Flat/level city lot. RM18, no HOA. Listed Oct 2025 (long-listed). New to tracking 9/27. ⚠ STATUS CONFLICT persists 9/29 — Movoto shows Delisted Nov 2025 vs Weichert/Compass show $20K Active — direct MLS check needed before pursuing.",
    flags:[[["VERIFY","f-verify"]]], link:"https://www.homes.com/winston-salem-nc/land-for-sale/"},
   {list:"A", addr:"4889 & 0 Oak Branch Lane, Walkertown 27051", price:28000, acre:"0.71 ac", county:"Forsyth",
-   util:"Public water + community sewer (per prior 2023 listing — VERIFY)", notes:"Walkertown = preferred area. MLS 1236470, ~5 days on site (listed ~9/23 — missed by 9/27 sweep). ERA Live Moore. Current MLS copy states no utilities/topography — verify before any interest. NEW 9/28.",
-   flags:[[["NEW","f-new"]],[["VERIFY","f-verify"]]], link:"https://reddoorcompany.com/listing/4889-0-oak-branch-lane-walkertown-nc-27051"},
+   util:"Public water + community sewer (per prior 2023 listing — VERIFY)", notes:"Walkertown = preferred area. MLS 1236470, ~5 days on site (listed ~9/23 — missed by 9/27 sweep). ERA Live Moore. Current MLS copy states no utilities/topography — verify before any interest. Added 9/28; utilities still unverified 9/29.",
+   flags:[[["VERIFY","f-verify"]]], link:"https://reddoorcompany.com/listing/4889-0-oak-branch-lane-walkertown-nc-27051"},
+  {list:"A", addr:"LOT 66 North Carolina Circle, Mocksville 27028", price:43200, acre:"1.11 ac", county:"Davie",
+   util:"City water + PUBLIC sewer, Duke electric", notes:"Colonial Estates. No HOA. Wooded city lot. MLS# 1015188, Active (updated 6/12/2026). Long-listed ~2,000 days — new to tracking 9/29, not a new listing. Same subdivision as tracked Lot 51 Delaware Ct ($38K). Verify before acting.",
+   flags:[[["NEW","f-new"]],[["VERIFY","f-verify"]]], link:"https://www.ColdwellBankerHomes.com/nc/mocksville/lot-66-north-carolina-circle/pid_40256474/"},
   {list:"B", addr:"3929 US Highway 64 W, Mocksville 27028", price:23000, acre:"0.87 ac", county:"Davie",
    util:"Public water, septic permit attached", notes:"Wooded — clearing required; not in flood zone. PRICE CUT 9/25 ($2K, 8/21/26) — confirmed on LandSearch. Different parcel from tracked 3939 US 64.",
    flags:[[["PRICE CUT $2K","f-cut"]]], link:"https://www.landsearch.com/properties/3929-us-highway-64-w-mocksville-nc-27028/4705006"},
@@ -189,9 +192,12 @@ const LOTS = [
    flags:[[["VERIFY","f-verify"]]], link:"https://www.homes.com/yadkinville-nc/land-for-sale/"},
   {list:"B", addr:"1621 Beechwood Rd, Yadkinville", price:33500, acre:"n/a", county:"Yadkin",
    util:"Utilities unverified — verify", notes:"Gray France Realty. List date corrected 9/28: active since 8/26/2026 per Triad MLS history (not new 9/27); stale Zillow/zoocasa Off-Market pages overridden by freshest MLS feed. Details unverified — verify before any interest.",
-   flags:[[["VERIFY","f-verify"]]], link:"https://www.homes.com/yadkinville-nc/land-for-sale/"}
+   flags:[[["VERIFY","f-verify"]]], link:"https://www.homes.com/yadkinville-nc/land-for-sale/"},
+  {list:"B", addr:"150 Lagle Lane, Mocksville 27028", price:44500, acre:"0.92 ac", county:"Davie",
+   util:"Utilities unverified", notes:"Canopy MLS# 4343502, Active. Price conflict ($40K stale crawl vs $44.5K fresh renders) — verify price. Utilities/topography/zoning unverified — verify before any interest.",
+   flags:[[["NEW","f-new"]],[["VERIFY","f-verify"]]], link:"https://www.landwatch.com/north-carolina-land-for-sale/mocksville/price-under-49999"}
 ];
-document.getElementById("updated").textContent = "Sept 28, 2026";
+document.getElementById("updated").textContent = "Sept 29, 2026";
 function fmt(n){ return n > 0 ? "$" + n.toLocaleString("en-US") : "—"; }
 function show(which){
   document.getElementById("tabA").classList.toggle("active", which==="A");
