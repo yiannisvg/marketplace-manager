@@ -24,7 +24,7 @@
 <div class="blue"><b>Marketplace Manager</b><div class="addr">Winston-Salem</div>
 <div class="btns"><button class="btn btnW" onclick="manualBackup()">🔄 Backup</button><button class="btn btnG" onclick="document.getElementById('fbFile').click()">🔄 Update from FB</button><button class="btn btnW" style="background:white;color:#1877F2" onclick="openImport()">🔗 Import URL</button><span id="last" style="font-size:10px;opacity:.8">Tap “Check for updates” for the latest</span></div></div>
 
-<div class="live"><h2>Live inventory</h2><p id="liveSub">Available first → Pending → Shipped → Sold</p><p id="dataStamp" style="font-size:12px;color:#1877F2;font-weight:700;margin-top:4px">↻ Data updated Sep 29, 2026 · 10:12 PM EDT</p></div>
+<div class="live"><h2>Live inventory</h2><p id="liveSub">Available first → Pending → Shipped → Sold</p><p id="dataStamp" style="font-size:12px;color:#1877F2;font-weight:700;margin-top:4px">↻ Data updated Sep 29, 2026 · 10:18 PM EDT</p></div>
 
 <div class="stats"><div class="s" id="st" onclick="statTap('total')"><b>0</b><span>Total</span></div><div class="s" id="sa" onclick="statTap('available')"><b>0</b><span>Available</span></div><div class="s" id="ss" onclick="statTap('sold')"><b>0</b><span>Sold</span></div></div>
 <div class="stats"><div class="s" id="sp" onclick="statTap('pending')"><b>0</b><span>Pending</span></div><div class="s shipped" id="ssh" onclick="statTap('shipped')"><b>0</b><span>Shipped</span></div><div class="s earned" id="se" onclick="statTap('earned')"><b>$0</b><span>Total Earned</span></div></div>
@@ -96,7 +96,8 @@ const seededListings = [{"id":1788574807194,"title":"Craftsman multitool","price
 {"id":"fb_152","title":"SJI Technical Digest 9 - Handling and Erection of Steel Joists and Joist Girders (2008)","price":40,"status":"Available","cat":"Books","photo":"https://files.catbox.moe/x7vpvs.jpg","buyer":"","final":40,"source":"facebook","url":"https://www.facebook.com/marketplace/item/1798438278133677","clicks":0},
 {"id":"fb_153","title":"Iconex Thermal Paper Rolls 2.25 in x 85 ft - Full Case of 72 Rolls","price":60,"status":"Available","cat":"Office Supplies","photo":"https://files.catbox.moe/xvjtgs.jpg","buyer":"","final":60,"source":"facebook","url":"https://www.facebook.com/marketplace/item/2114203379225852","clicks":0},
 {"id":"fb_154","title":"Takeyman Phone Holder for Honda CR-V/HR-V 2023-2026 - MagSafe, 20 Magnets","price":15,"status":"Available","cat":"Auto Parts","photo":"https://files.catbox.moe/zyk1ku.jpg","buyer":"","final":15,"source":"facebook","url":"https://www.facebook.com/marketplace/item/1709801406753143","clicks":0},
-{"id":"fb_155","title":"3M 8210 N95 Particulate Respirators - 18 Masks","price":12,"status":"Available","cat":"Safety","photo":"https://files.catbox.moe/z3oh1w.jpg","buyer":"","final":12,"source":"facebook","url":"https://www.facebook.com/marketplace/item/942994038884818","clicks":0}];
+{"id":"fb_155","title":"3M 8210 N95 Particulate Respirators - 18 Masks","price":12,"status":"Available","cat":"Safety","photo":"https://files.catbox.moe/z3oh1w.jpg","buyer":"","final":12,"source":"facebook","url":"https://www.facebook.com/marketplace/item/942994038884818","clicks":0},
+{"id":"fb_156","title":"NETGEAR C3700 N600 WiFi Cable Modem Router - DOCSIS 3.0","price":20,"status":"Available","cat":"Electronics","photo":"https://files.catbox.moe/50grnc.jpg","buyer":"","final":20,"source":"facebook","url":"https://www.facebook.com/marketplace/item/2373920320128175","clicks":0}];
 let listings;
 // IDs removed from the seed (reposted/deleted). Phones drop these on load so stale copies vanish.
 const retiredIds = ["fb_49","fb_64","fb_65","fb_66","fb_67","fb_68","1789424774536"];
@@ -348,7 +349,7 @@ tabs(); drawSections(); updateStats(); buildSelect();
     function stampOf(doc) {
       var el = doc.getElementById('dataStamp');
       var t = el ? el.textContent : '';
-      var m = t.match(/Data updated Sep 29, 2026 · 10:12 PM EDT<]*/);
+      var m = t.match(/Data updated Sep 29, 2026 · 10:18 PM EDT<]*/);
       return m ? m[0] : '';
     }
     var current = stampOf(document);
@@ -357,7 +358,7 @@ tabs(); drawSections(); updateStats(); buildSelect();
     fetch(location.pathname + bust, { cache: 'no-store' }).then(function (r) {
       return r.text();
     }).then(function (html) {
-      var m = html.match(/Data updated Sep 29, 2026 · 10:12 PM EDT<]*/);
+      var m = html.match(/Data updated Sep 29, 2026 · 10:18 PM EDT<]*/);
       if (m && m[0] !== current) {
         location.href = location.pathname + bust;
       }
