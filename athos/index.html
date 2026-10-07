@@ -107,7 +107,7 @@ const LOTS = [
    util:"City water + PUBLIC sewer, no HOA", notes:"Colonial Estates; flat subdivision lot. Brittany Ward/Triad Home Real Estate. NEW 10/2 — long-listed crawl; verify on MLS before acting.",
    flags:[[["VERIFY","f-verify"]]], link:"https://www.homes.com/mocksville-nc/land-for-sale/"},
   {list:"A", addr:"LOT 13 N Carolina Cir, Mocksville 27028", price:45000, acre:"0.79 ac", county:"Davie",
-   util:"City water + PUBLIC sewer, no HOA", notes:"Colonial Estates. LIKELY OFF MARKET — DEMOTED 10/5: lakenormanrealty 9-day crawl (sold or taken off the market) and Weichert 18-day crawl (sold or expired) vs a 260-day ezhomesearch Active tile (MLS 1015175). Conflicting status -> not promotable. Watch only.",
+   util:"City water + PUBLIC sewer, no HOA", notes:"Colonial Estates. CONFLICTING FRESH SIGNALS — DEMOTED (stays 10/7): Weichert 1-day crawl shows inStock $45,000 (MLS 1015175) while lakenormanrealty 1-day crawl says sold or taken off the market. Conflicting status -> not promotable. Watch only.",
    flags:[[["LIKELY OFF MARKET","f-pending"]],[["VERIFY","f-verify"]]], link:"https://www.homes.com/mocksville-nc/land-for-sale/"},
   {list:"A", addr:"LOT 27 Rhode Island Ct, Mocksville 27028", price:69900, acre:"0.88 ac", county:"Davie",
    util:"City water + PUBLIC sewer, no HOA", notes:"Colonial Estates; city water + PUBLIC sewer, no HOA. The $23K tile was a bad render — freshest MLS-backed renders (cbadvantage 10-hr crawl; reddoor 10-day) show MLS 1082720 $69,900 Active, 0.88 ac. Top of the $60-70K stretch tier; verify on MLS before considering.",
@@ -146,7 +146,7 @@ const LOTS = [
    util:"Rural — well + septic assumed", notes:"Recently cleared with driveway graded; unrestricted (mobiles allowed). Verified Active $39,900 10/1 (Weichert + homes.com; Jonathan Inman/Carolina Farms & Homes — King). No change.",
    flags:[[["VERIFY","f-verify"]]], link:"https://www.homes.com/pinnacle-nc/land-for-sale/"},
   {list:"B", addr:"111 Waterway Dr, Lexington 27292", price:50000, acre:"0.56 ac", county:"Davidson",
-   util:"Public water (Davidson Water), 3-BR septic permit (2023)", notes:"Cleared, near High Rock Lake. Blueprints included. Seller financing. STILL UNCONFIRMED 10/5: century21.com (96-day) shows 'couldn't find this property — may have been sold or taken off the market'; Compass MLS#1167618 page is a 327-day stale crawl. Red Door's 10/3 back-on-market render has no MLS confirmation. Watch only.",
+   util:"Public water (Davidson Water), 3-BR septic permit (2023)", notes:"Cleared, near High Rock Lake. Blueprints included. Seller financing. STILL SALE PENDING 10/7 — 10/6 back-on-market lean RETRACTED: Weichert 17-day crawl + Homefront 14-day crawl both show Status: Pending (Triad MLS 1216021, updated 9/22/26). Red Door/LakeHouse Active renders are lagging snapshots. Watch for fall-through.",
    flags:[[["VERIFY","f-verify"]]], link:"https://www.lakehouse.com/210-shoreline-drive-lexington-north-carolina-27292-p5374585.html"},
   {list:"B", addr:"162 Houston's Hideaway, Lexington 27292", price:49000, acre:"1.44 ac", county:"Davidson",
    util:"Public water, septic needed", notes:"Cleared, buildable. Yachtsman's Point lake community (pool/tennis/boat ramp). HOA $1,080/yr. Min 2,000 sqft build. Verified Active 10/1.",
@@ -197,11 +197,8 @@ const LOTS = [
    util:"Public water; sewer unstated — verify", notes:"Adjacent to tracked 2705 Camillia Cove ($31K); seller prefers selling both as a pair. Wooded cul-de-sac; R-5; Westover Gardens; NO HOA. MLS 1211044. New to tracking 9/27 — verified 10/1 (homes.com live tile); verify sewer + status.",
    flags:[[["VERIFY","f-verify"]]], link:"https://www.homes.com/high-point-nc/land-for-sale/"},
   {list:"B", addr:"00 Sherry Ln, Yadkinville 27055", price:34900, acre:"2.44 ac", county:"Yadkin",
-   util:"Utilities unverified — verify", notes:"Cornerstone Realty (Ricky Roberts), MLS 1233495. CONFLICT UNRESOLVED 10/5: realtor.com 36-day crawl shows NEW $34,900 (2.44 ac) — agrees with Weichert's Active side, but no fresh signal against the 10/2 bhgre Pending $33,500 render. Live-MLS check needed; verify utilities + status before any interest.",
+   util:"Utilities unverified — verify", notes:"Cornerstone Realty (Ricky Roberts), MLS 1233495. CONFLICT LIKELY RESOLVED 10/7: the bhgre Pending $33,500 render (MLS 1233475) belongs to now-SOLD 1621 Beechwood Rd (Sold 9/16/26, same agent). Sherry carried Active $34,900 (realtor.com 38-day NEW + RedDoor 29-day newest-listing); one fresh confirmation short of promotion. Verify utilities + status.",
    flags:[[["VERIFY","f-verify"]]], link:"https://www.homes.com/yadkinville-nc/land-for-sale/"},
-  {list:"B", addr:"1621 Beechwood Rd, Yadkinville", price:33500, acre:"n/a", county:"Yadkin",
-   util:"Utilities unverified — verify", notes:"Gray France Realty. LIKELY OFF MARKET — WATCH ONLY 10/5: zoocasa 18-hour crawl again says 'does not exist or has been deleted'; Zillow 39-day crawl also shows Off Market. Only homes.com's 24-day tile still renders For Sale $33,500. Conflicting status -> not promotable. Watch until direct MLS check resolves it.",
-   flags:[[["LIKELY OFF MARKET","f-pending"]],[["VERIFY","f-verify"]]], link:"https://www.homes.com/yadkinville-nc/land-for-sale/"},
   {list:"B", addr:"348 Reedy Creek Ct, Lexington 27295", price:49500, acre:"1.41 ac", county:"Davidson",
    util:"Utilities unverified — verify", notes:"Wooded cul-de-sac; branch on property. John Mooney/Hubbard Realty (broker-owned). At cap. NEW 10/2 — long-listed crawl; verify utilities + status.",
    flags:[[["VERIFY","f-verify"]]], link:"https://www.homes.com/lexington-nc/land-for-sale/"},
@@ -299,7 +296,7 @@ const LOTS = [
    util:"Utilities unstated — verify", notes:"0.57 Acres, ready to build, easy access to utilities in a wonderful area. Andrea Ochoa / Collective Realty (homes.com 356-day crawl). 27265 is a decent NW-High-Point area. LEAD 10/3 — needs direct MLS verification before treating as tracked.",
    flags:[[["VERIFY","f-verify"]]], link:"https://www.homes.com/high-point-nc/land-for-sale/"}
 ];
-document.getElementById("updated").textContent = "Oct 5, 2026";
+document.getElementById("updated").textContent = "Oct 7, 2026";
 function fmt(n){ return n > 0 ? "$" + n.toLocaleString("en-US") : "—"; }
 function show(which){
   document.getElementById("tabA").classList.toggle("active", which==="A");
